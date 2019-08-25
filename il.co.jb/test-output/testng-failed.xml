@@ -5,7 +5,7 @@
     <classes>
       <class name="il.co.jb.NewTest">
         <methods>
-          <include name="testCalculatorAdd"/>
+          <include name="testCalculatorDivide"/>
         </methods>
       </class> <!-- il.co.jb.NewTest -->
     </classes>
