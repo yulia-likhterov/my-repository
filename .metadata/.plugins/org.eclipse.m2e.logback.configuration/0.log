@@ -1,0 +1,66 @@
+2019-08-27 12:23:05,175 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-08-27 12:23:54,685 [Worker-2: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: il.co.jb:selenium-project:1.0 @ C:\Users\Administrator\eclipse-workspace\my-repository\selenium-project\pom.xml.
+2019-08-27 12:23:54,974 [Worker-2: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: il.co.jb:github-automation:0.0.1-SNAPSHOT @ C:\Users\Administrator\eclipse-workspace\my-repository\github-automation\pom.xml.
+2019-08-27 12:23:56,248 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /selenium-project/src/main/java
+2019-08-27 12:23:56,249 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /selenium-project/src/test/java
+2019-08-27 12:23:56,538 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /github-automation/src/main/java
+2019-08-27 12:23:56,539 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /github-automation/src/main/resources
+2019-08-27 12:23:56,540 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /github-automation/src/test/java
+2019-08-27 12:23:56,540 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /github-automation/src/test/resources
+2019-08-27 12:23:56,698 [Worker-2: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 2 project(s) in 3 sec
+2019-08-27 12:24:00,217 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:24:00,241 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-08-27 12:24:00,244 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:24:00,256 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-08-27 12:24:01,481 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:24:01,491 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\my-repository\selenium-project\src\main\resources
+2019-08-27 12:24:01,503 [Worker-0: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:24:01,513 [Worker-0: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\my-repository\selenium-project\src\test\resources
+2019-08-27 12:30:28,878 [Worker-11: Creating project "stamTest"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: il.co.jb:stamTest:0.0.1-SNAPSHOT @ C:\Users\Administrator\eclipse-workspace\my-repository\stamTest\pom.xml.
+2019-08-27 12:30:29,065 [Worker-11: Creating project "stamTest"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /stamTest/src/main/java
+2019-08-27 12:30:29,074 [Worker-11: Creating project "stamTest"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /stamTest/src/main/resources
+2019-08-27 12:30:29,083 [Worker-11: Creating project "stamTest"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /stamTest/src/test/java
+2019-08-27 12:30:29,091 [Worker-11: Creating project "stamTest"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /stamTest/src/test/resources
+2019-08-27 12:30:29,638 [Worker-16: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:30:29,682 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-08-27 12:30:29,685 [Worker-16: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:30:29,713 [Worker-16: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-08-27 12:38:18,899 [Worker-20: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: il.co.jb:selenium-examples:1.0 @ C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\selenium-examples\pom.xml.
+2019-08-27 12:38:19,238 [Worker-20: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /selenium-examples/src/main/java
+2019-08-27 12:38:19,247 [Worker-20: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /selenium-examples/src/test/java
+2019-08-27 12:38:19,352 [Worker-20: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2019-08-27 12:38:19,942 [Worker-21: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:38:19,955 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\selenium-examples\src\main\resources
+2019-08-27 12:38:19,958 [Worker-21: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:38:19,974 [Worker-21: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\selenium-examples\src\test\resources
+2019-08-27 12:45:57,888 [Worker-26: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: il.co.jb:automation-proj:1.0 @ C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\automation-proj\pom.xml.
+2019-08-27 12:45:58,161 [Worker-26: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: il.co.jb:selenium-examples:1.0 @ C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\selenium-examples\pom.xml.
+2019-08-27 12:45:58,615 [Worker-26: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /automation-proj/src/main/java
+2019-08-27 12:45:58,622 [Worker-26: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /automation-proj/src/test/java
+2019-08-27 12:45:58,710 [Worker-26: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /selenium-examples/src/main/java
+2019-08-27 12:45:58,717 [Worker-26: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /selenium-examples/src/test/java
+2019-08-27 12:45:58,854 [Worker-26: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 2 project(s) in 1 sec
+2019-08-27 12:45:59,413 [Worker-26: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:45:59,425 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\automation-proj\src\main\resources
+2019-08-27 12:45:59,450 [Worker-26: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:45:59,459 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\automation-proj\src\test\resources
+2019-08-27 12:45:59,759 [Worker-26: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:45:59,769 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\selenium-examples\src\main\resources
+2019-08-27 12:45:59,780 [Worker-26: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:45:59,792 [Worker-26: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\selenium-examples\src\test\resources
+2019-08-27 12:46:52,503 [Worker-23: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:46:52,510 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\automation-proj\src\main\resources
+2019-08-27 12:46:52,518 [Worker-23: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:46:52,530 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\automation-proj\src\test\resources
+2019-08-27 12:46:52,547 [Worker-23: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:46:52,557 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-08-27 12:46:52,569 [Worker-23: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:46:52,578 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-08-27 12:46:52,586 [Worker-23: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:46:52,593 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\selenium-examples\src\main\resources
+2019-08-27 12:46:52,594 [Worker-23: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:46:52,602 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\Rony\jb_aug19\selenium-examples\src\test\resources
+2019-08-27 12:46:52,611 [Worker-23: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:46:52,639 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\my-repository\selenium-project\src\main\resources
+2019-08-27 12:46:52,659 [Worker-23: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-08-27 12:46:52,701 [Worker-23: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Administrator\eclipse-workspace\my-repository\selenium-project\src\test\resources
