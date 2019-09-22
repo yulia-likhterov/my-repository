@@ -37,12 +37,12 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 		return bot.getElementText(personalDetailsPageSecondaryLabel);
 	}
 	
-	public void writeId(String id) {
+	public void writeId(String id) throws InterruptedException {
 		
 		bot.writeToElement(idInput, id);
 	}
 
-	public void writeDOB(String dobDay, String dobMonth, String dobYear) {
+	public void writeDOB(String dobDay, String dobMonth, String dobYear) throws InterruptedException {
 	
 		bot.writeToElement(dobDayInput, dobDay);
 		bot.writeToElement(dobMonthInput, dobMonth);
@@ -50,14 +50,14 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 		
 	}
 
-	public void clickOnSelectedService() {
+	public void clickOnSelectedService() throws InterruptedException {
 	
 			bot.click(selectServiceDropDown);
 			bot.click(selectAServiceFromDropDown);
 			bot.click(selectedServiceFromDropDown);
 	}
 	
-	public void clickNextPageButton() {
+	public void clickNextPageButton() throws InterruptedException {
 		
 		bot.click(nextPageButton);
 	}

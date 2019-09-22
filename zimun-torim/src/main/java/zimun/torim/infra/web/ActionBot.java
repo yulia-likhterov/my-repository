@@ -16,14 +16,38 @@ public class ActionBot {
 		this.driver = driver;
 	}
 	
-	public void click(By2 by2) {
+	public void click(By2 by2) throws InterruptedException {
 		report.log("Click: " + by2);
+		if (!driver.findElement(by2.by).isDisplayed()) {
+			Thread.sleep(1000);
+		}
+		else if (!driver.findElement(by2.by).isSelected()) {
+			Thread.sleep(1000);
+		}
 		driver.findElement(by2.by).click();
+		
 	}
 	
-	public void writeToElement(By2 by2, String text) {
+	public void clickWithEnter(By2 by2) throws InterruptedException {
+		report.log("Click: " + by2);
+		if (!driver.findElement(by2.by).isDisplayed()) {
+			Thread.sleep(1000);
+		}
+		else if (!driver.findElement(by2.by).isSelected()) {
+			Thread.sleep(1000);
+		}
+		driver.findElement(by2.by).click();
+		driver.findElement(by2.by).sendKeys(Keys.ENTER);
+		driver.findElement(by2.by).sendKeys(Keys.ENTER);
+	}
+	
+	public void writeToElement(By2 by2, String text) throws InterruptedException {
 		report.log("Write '" + text + "' to: " + by2);
+		if (!driver.findElement(by2.by).isDisplayed()) {
+			Thread.sleep(1000);
+		}
 		driver.findElement(by2.by).sendKeys(text);
+		driver.findElement(by2.by).sendKeys(Keys.ENTER);
 		driver.findElement(by2.by).sendKeys(Keys.ENTER);
 	}
 	

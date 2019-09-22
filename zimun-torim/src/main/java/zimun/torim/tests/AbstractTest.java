@@ -6,10 +6,13 @@ import org.testng.annotations.Listeners;
 
 
 import zimun.torim.infra.pages.ZimunTorimPersonalDetailsPage;
+import zimun.torim.infra.pages.AbstractPage;
 import zimun.torim.infra.web.BrowserType;
 import zimun.torim.infra.web.WebDriverFactory;
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 
 @Listeners(il.co.topq.difido.ReportManagerHook.class)
 public abstract class AbstractTest {
@@ -25,18 +28,32 @@ public abstract class AbstractTest {
 		}
 	}
 	
-	public void checkPatientPersonalDetails (String id, String dobDay, String dobMonth, String dobYear) {
+	public void initializeDriverInPage() {
 		
 		String url = "https://my.health.gov.il/MyPortal/Pages/FHCAppointWOP.aspx";
 		report.log("Browse to URL: " + url);
 		driver.get(url);
-		
+	}
+	
+	public void checkPatientPersonalDetails (String id, String dobDay, String dobMonth, String dobYear) throws InterruptedException {
+	
 		ZimunTorimPersonalDetailsPage zimunTorimPersonalDetailsPage = new ZimunTorimPersonalDetailsPage(driver);
 		zimunTorimPersonalDetailsPage.writeId(id);
 		zimunTorimPersonalDetailsPage.writeDOB(dobDay, dobMonth, dobYear);
-		zimunTorimPersonalDetailsPage.clickOnSelectedService();
+		//zimunTorimPersonalDetailsPage.clickOnSelectedService();
 	}
 	
 	
+	/*public String verifyLabelOnPage(WebDriver driver, String className) throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		
+		String labelOnPage="";
+		Class<?> c = Class.forName(className);
+		Constructor<?> cons = c.getConstructor(WebDriver.class);
+		Object object = cons.newInstance(driver);
+		
+		labelOnPage=((ZimunTorimPersonalDetailsPage) object).getPersonalDetailsPageMainLabel();
+		return labelOnPage;
+		
+	}*/
 
 }

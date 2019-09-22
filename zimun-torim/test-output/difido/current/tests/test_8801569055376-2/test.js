@@ -1,1 +1,0 @@
-var test = {"uid":"8801569055376-2","reportElements":[{"title":"Browse to zimun torim portal","message":null,"status":"success","type":"startLevel","time":"11:43:06.100"},{"title":"Verifying page titles","message":null,"status":"success","type":"regular","time":"11:43:10.976"},{"title":null,"message":null,"status":"success","type":"stopLevel","time":"11:43:10.988"}]};

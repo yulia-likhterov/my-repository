@@ -2,16 +2,20 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-09-21T08:43:01Z" name="Default suite" finished-at="2019-09-21T08:44:14Z" duration-ms="72853">
+  <suite started-at="2019-09-22T17:02:13Z" name="Default suite" finished-at="2019-09-22T17:02:29Z" duration-ms="16134">
     <groups>
     </groups>
-    <test started-at="2019-09-21T08:43:01Z" name="Default test" finished-at="2019-09-21T08:44:14Z" duration-ms="72853">
-      <class name="zimun.torim.SetNewAppointment">
-        <test-method signature="setNewAppointment()[pri:0, instance:zimun.torim.SetNewAppointment@22635ba0]" started-at="2019-09-21T11:43:01Z" name="setNewAppointment" finished-at="2019-09-21T11:44:14Z" duration-ms="72802" status="PASS">
+    <test started-at="2019-09-22T17:02:13Z" name="Default test" finished-at="2019-09-22T17:02:29Z" duration-ms="16134">
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest@12d4bf7e]" started-at="2019-09-22T20:02:13Z" name="beforeMethod" finished-at="2019-09-22T20:02:18Z" duration-ms="4614" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setNewAppointment -->
-      </class> <!-- zimun.torim.SetNewAppointment -->
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="_001_ZimunTorimVerifyPersonalDetails()[pri:0, instance:zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest@12d4bf7e]" started-at="2019-09-22T20:02:18Z" name="_001_ZimunTorimVerifyPersonalDetails" finished-at="2019-09-22T20:02:29Z" duration-ms="11469" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _001_ZimunTorimVerifyPersonalDetails -->
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

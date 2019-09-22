@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="zimun.torim.SetNewAppointment">
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
         <methods>
-          <include name="setNewAppointment"/>
+          <include name="_001_ZimunTorimVerifyPersonalDetails"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- zimun.torim.SetNewAppointment -->
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
