@@ -27,12 +27,12 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 		
 	}
 	
-	public String getPersonalDetailsPageMainLabel() {
+	public String getPersonalDetailsPageMainLabel() throws Exception {
 		
 		return bot.getElementText(personalDetailsPageMainLabel);
 	}		
 	
-	public String getPersonalDetailsPageSecondaryLabel() {
+	public String getPersonalDetailsPageSecondaryLabel() throws Exception {
 		
 		return bot.getElementText(personalDetailsPageSecondaryLabel);
 	}
@@ -44,9 +44,9 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 
 	public void writeDOB(String dobDay, String dobMonth, String dobYear) throws InterruptedException {
 	
-		bot.writeToElement(dobDayInput, dobDay);
-		bot.writeToElement(dobMonthInput, dobMonth);
-		bot.writeToElement(dobYearInput, dobYear);
+		bot.writeToElementWithEnter(dobDayInput, dobDay);
+		bot.writeToElementWithEnter(dobMonthInput, dobMonth);
+		bot.writeToElementWithTwoEnters(dobYearInput, dobYear);
 		
 	}
 

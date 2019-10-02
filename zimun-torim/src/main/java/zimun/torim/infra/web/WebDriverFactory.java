@@ -5,32 +5,45 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import zimun.torim.infra.web.BrowserType;
 
 public class WebDriverFactory {
 	
-public static WebDriver getDriver(BrowserType browserType) throws Exception {
+	protected static WebDriver driver;
+	
+	@BeforeSuite
+	public static WebDriver getDriver(BrowserType browserType) throws Exception {	
+	
+		driver = null;
 		
-		WebDriver driver = null;
-		
-		switch(browserType) {
-		case CHROME:
-			System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver.exe");
-			driver = new ChromeDriver();
-			break;
-		case FIREFOX:
-			System.setProperty("webdriver.gecko.driver", "webdrivers/geckodriver.exe");
-			driver = new FirefoxDriver();
-			break;
-		default:
-			throw new Exception("Browser type: " + browserType + " is not supported yet.");
-		}
+			switch(browserType) {
+			case CHROME:
+				System.setProperty("webdriver.chrome.driver", "webdrivers/chromedriver.exe");
+				driver = new ChromeDriver();
+				break;
+			case FIREFOX:
+				System.setProperty("webdriver.gecko.driver", "webdrivers/geckodriver.exe");
+				driver = new FirefoxDriver();
+				break;
+			default:
+				throw new Exception("Browser type: " + browserType + " is not supported yet.");
+				
+			}
 		
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
 		return driver;
+	}
+	
+	@AfterSuite
+	public void afterSuite() {
+		
+	    driver.quit();
+	    
 	}
 
 }

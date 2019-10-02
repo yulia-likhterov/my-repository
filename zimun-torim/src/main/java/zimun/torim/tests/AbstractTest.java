@@ -2,13 +2,14 @@ package zimun.torim.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
-
 
 import zimun.torim.infra.pages.ZimunTorimPersonalDetailsPage;
 import zimun.torim.infra.pages.AbstractPage;
 import zimun.torim.infra.web.BrowserType;
 import zimun.torim.infra.web.WebDriverFactory;
+import zimun.torim.infra.config.MainConfig;
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
 import java.lang.reflect.Constructor;
@@ -17,20 +18,21 @@ import java.lang.reflect.InvocationTargetException;
 @Listeners(il.co.topq.difido.ReportManagerHook.class)
 public abstract class AbstractTest {
 	
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	protected ReportDispatcher report = ReportManager.getInstance();
 	
-	@BeforeMethod
-	public void beforeMethod() throws Exception {
+	@BeforeSuite
+	public static void beforeMethod() throws Exception {
+		
+		MainConfig.initFromFile("src/main/resources/MainConfig.properties");
 		
 		if (driver == null) {
 			driver = WebDriverFactory.getDriver(BrowserType.CHROME);
 		}
 	}
 	
-	public void initializeDriverInPage() {
+	public void browseToUrl (String url) {
 		
-		String url = "https://my.health.gov.il/MyPortal/Pages/FHCAppointWOP.aspx";
 		report.log("Browse to URL: " + url);
 		driver.get(url);
 	}
