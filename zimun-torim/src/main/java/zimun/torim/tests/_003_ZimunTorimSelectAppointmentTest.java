@@ -14,7 +14,7 @@ public class _003_ZimunTorimSelectAppointmentTest extends AbstractTest {
 	public void ZimunTorimSelectAppointment() throws Exception {
 		
 		// Step 1 - Select the fourth appointment slot from table
-		report.startLevel("Step 1 - Select the fourth apoointment slot from table");
+		report.startLevel("Step 1 - Select the fourth appointment slot from table");
 		ZimunTorimSelectAppointmentPage zimunTorimSelectAppointmentPage = new ZimunTorimSelectAppointmentPage(driver);
 		zimunTorimSelectAppointmentPage.clickOnSelectedAppointment();
 		report.endLevel();
@@ -24,6 +24,7 @@ public class _003_ZimunTorimSelectAppointmentTest extends AbstractTest {
 		ZimunTorimSetAppointmentPage zimunTorimSetAppointmentPage = new ZimunTorimSetAppointmentPage(driver);
 		if (zimunTorimSetAppointmentPage.isSelectedAppointmentDetailsFormDisplayed()) {
 			report.log("Verified the selected appointment slot is seen on the setting reminders page");
+			takeScreenshot("Screen shot of selected appointment slot is seen on the setting reminders page");
 		}
 		else {
 			report.log("Didin't verify the selected appointment slot is seen on the setting reminders page");

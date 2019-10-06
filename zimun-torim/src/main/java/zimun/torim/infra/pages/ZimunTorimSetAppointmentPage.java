@@ -12,7 +12,15 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 	private static final By2 mobilePhoneBaseNumberInput = new By2("'mobilePhoneBaseNumber' input", By.cssSelector("input[name='BaseNumber']"));
 	private static final By2 mobilePhonePrefixSelect = new By2("'mobilePhonePrefix' select", By.cssSelector("a[class='sbSelector'"));
 	private By2 selectedMobilePrifix;
+	private static final By2 dismissCookiesButton = new By2("'dismissCookies' button", By.cssSelector("a[aria-label='dismiss cookie message']"));
+	
+	private static final By2 emailAddressInput = new By2("'emailAddress' input", By.cssSelector("input[name='emailAddress']"));
+	private static final By2 emailNameInput = new By2("'emailName' input", By.id("inboxfield"));
+	private static final By2 goNewInboxButton = new By2("'goNewInbox' button", By.id("go_inbox1"));
+	private static final By2 setAppointmentSubjectLabel = new By2("'setAppointmentSubject' label", By.xpath("//td/a[text()[contains(.,'אישור קביעת תור')]]"));
+	private static final By2 getEmailAppointmentApprovalLabel = new By2("'getAppointmentApproval' label", By.xpath("//b[text()[contains(.,'להלן אישור התור לטיפות חלב')]]"));
 	private static final By2 ishurButton = new By2("'ishurButton' button", By.id("gobut"));
+	
 	
 	public ZimunTorimSetAppointmentPage (WebDriver driver) {
 		
@@ -28,6 +36,11 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 	public void writeToMobilePhoneBaseNumber (String baseNumber) throws Exception {
 		
 		bot.writeToElement(mobilePhoneBaseNumberInput, baseNumber);
+	}
+	
+	public void writeToEmailAddressInput (String email) throws Exception {
+		
+		bot.writeToElement(emailAddressInput, email);
 	}
 	
 	public void setSelectedMobilePrifix (String mobilePrefix) {
@@ -46,10 +59,59 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 		bot.click(selectedMobilePrifix);
 	}
 	
+	public void clickOnGoNewInboxButton () throws Exception {
+		
+		bot.click(goNewInboxButton);
+	}
+	
+	
+	public void clickOnSetAppointmentSubjectLabel() throws Exception {
+		
+		bot.click(setAppointmentSubjectLabel);
+		
+	}	
+	
+	
 	public void clickOnIshurButton() throws Exception {
 		
 		bot.click(ishurButton);
 	}
+	
+	public void clickOnDismissCookiesButton() throws Exception {
+		
+		bot.click(dismissCookiesButton);
+	}
+	
+	
+	public boolean isDismissCookiesButtonVisible () {
+		
+		return bot.isElementVisible(dismissCookiesButton);
+	}
+	
+	
+	public void writeToEmailNameInput (String emailName) throws Exception {
+		
+		bot.writeToElement (emailNameInput, emailName);
+	}
+	
+	public String getEmailAppointmentApprovalLabel () throws Exception {
+		
+		return bot.getElementText(getEmailAppointmentApprovalLabel);
+	}
 
+	public void switchToMsgBodyIframe() {
+		
+		bot.switchToIframeById("msg_body");
+	}
+	
+	public void switchToMailinatorTab (String url) {
+		
+		bot.switchToNewTab(url);
+	}
+	
+	public void switchBackToZimunTorim() {
+		
+		bot.switchBackToMainTab();
+	}
 	
 }

@@ -1,5 +1,7 @@
 package zimun.torim.tests;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
@@ -12,6 +14,9 @@ import zimun.torim.infra.web.WebDriverFactory;
 import zimun.torim.infra.config.MainConfig;
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
+import il.co.topq.difido.model.Enums.Status;
+
+import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -19,7 +24,7 @@ import java.lang.reflect.InvocationTargetException;
 public abstract class AbstractTest {
 	
 	protected static WebDriver driver;
-	protected ReportDispatcher report = ReportManager.getInstance();
+	protected static ReportDispatcher report = ReportManager.getInstance();
 	
 	@BeforeSuite
 	public static void beforeMethod() throws Exception {
@@ -42,7 +47,20 @@ public abstract class AbstractTest {
 		ZimunTorimPersonalDetailsPage zimunTorimPersonalDetailsPage = new ZimunTorimPersonalDetailsPage(driver);
 		zimunTorimPersonalDetailsPage.writeId(id);
 		zimunTorimPersonalDetailsPage.writeDOB(dobDay, dobMonth, dobYear);
-		//zimunTorimPersonalDetailsPage.clickOnSelectedService();
+		
+	}
+	
+	public static void takeScreenshot(String description) throws Exception {
+		
+		if (driver != null) {
+			File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			report.log(description);
+			report.addImage(screenshotFile, description);
+			
+		}
+		else {
+			report.log("driver == null; Can't take screenshot.", Status.warning);
+		}
 	}
 	
 	

@@ -28,11 +28,12 @@ public class _002_ZimunTorimStationLocatingTest extends AbstractTest {
 		zimunTorimStationLocatingPage.clickOnCityInput();
 		zimunTorimStationLocatingPage.writeToEnterCity(city);
 		zimunTorimStationLocatingPage.clickOnSearchCity();
+		takeScreenshot("Screen shot of selected station");
 		zimunTorimStationLocatingPage.clickOnselectedStation();
 		ZimunTorimAvailableSlotsPerStationPage zimunTorimAvailableSlotsPerStationPage = new ZimunTorimAvailableSlotsPerStationPage(driver);
 		String availableSlotsPerStationPageLabel = zimunTorimAvailableSlotsPerStationPage.getAvailableSlotsPerStationPageLabel();
 		AssertUtils.assertTrue(availableSlotsPerStationPageLabel.contains(expectedAvailableSlotsPerStationPageLabel), "Expecting to see '" + expectedAvailableSlotsPerStationPageLabel + "' as part of page title label");
-		
+		takeScreenshot("Screen shot of available slots per station");
 		report.endLevel();
 	}
 	

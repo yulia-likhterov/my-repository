@@ -53,10 +53,12 @@ public class _001_ZimunTorimVerifyPersonalDetailsTest extends AbstractTest {
 		// Step 3 - Verify the patient details are correct by getting to station location page 
 		report.startLevel("Step 3 - Verify pateint details are correct by getting the station location page");
 		zimunTorimPersonalDetailsPage.clickOnSelectedService();
+		takeScreenshot("Screen shot of filled personal details");
 		zimunTorimPersonalDetailsPage.clickNextPageButton();
 		ZimunTorimStationLocatingPage zimunTorimStationLocatingPage = new ZimunTorimStationLocatingPage(driver);
 		String expectedStationLocatingPageLabel = zimunTorimStationLocatingPage.getStationLocatingPageLabel();
 		AssertUtils.assertEquals(stationLocatingPageLabel, expectedStationLocatingPageLabel, "Station locating page label should be: " + stationLocatingPageLabel);
+		takeScreenshot("Screen shot of station locatin page");
 		report.endLevel();
 		
 		

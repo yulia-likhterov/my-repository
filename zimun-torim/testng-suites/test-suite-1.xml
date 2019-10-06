@@ -8,7 +8,7 @@
       <class name="zimun.torim.tests._003_ZimunTorimSelectAppointmentTest"/>
       <class name="zimun.torim.tests._004_ZimunTorimSetAppointmentTest"/>
       <class name="zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest"/>
-      <class name="zimun.torim.tests._006_ZimunTorimCancelAppointmentTest"/>
+     
     </classes>
   </test> 
 </suite> 

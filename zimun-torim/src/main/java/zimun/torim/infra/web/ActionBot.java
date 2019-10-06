@@ -1,5 +1,9 @@
 package zimun.torim.infra.web;
 
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,12 +25,11 @@ public class ActionBot {
 	
 	public void click(By2 by2) throws InterruptedException {
 		report.log("Click: " + by2);
-		/*if (!driver.findElement(by2.by).isDisplayed()) {
-			Thread.sleep(1000);
+		if (!driver.findElement(by2.by).isDisplayed()) {
+			waitForElementToBeVisible(by2, 30);
 		}
-		*/
 		if (!driver.findElement(by2.by).isSelected()) {
-			waitForElementToBeClickable(by2, 15);
+			waitForElementToBeClickable(by2, 20);
 		}
 		driver.findElement(by2.by).click();
 		
@@ -75,10 +78,11 @@ public class ActionBot {
 	}
 	
 	public String getElementText(By2 by2) throws Exception {
+		
+		if (!driver.findElement(by2.by).isDisplayed()) {
+			waitForElementToBeVisible(by2, 20);
+		}
 		String text = driver.findElement(by2.by).getText();
-		/*if (!driver.findElement(by2.by).isDisplayed()) {
-			waitForElementNotDisplayed(by2);
-		}*/
 		report.log("Element " + by2 + " inner text: '" + text + "'");
 		return text;
 	}
@@ -97,10 +101,37 @@ public class ActionBot {
 		webDriverWait.until(ExpectedConditions.invisibilityOf(element));
 	}
 	
+	public void waitForElementToBeVisible(By2 by2, int timeoutInSeconds) {
+		WebElement element = driver.findElement(by2.by);
+		WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
+		webDriverWait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	
 	public void waitForElementToBeClickable(By2 by2, int timeoutInSeconds) {
 		WebElement element = driver.findElement(by2.by);
 		WebDriverWait webDriverWait = new WebDriverWait(driver, timeoutInSeconds);
 		webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-
+	
+	public void switchToIframeById(String iframeId) {
+		
+		driver.switchTo().frame(iframeId);
+	}
+	
+	public void switchToNewTab(String url) {
+		
+		((JavascriptExecutor)driver).executeScript("window.open()");
+		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(1)); //switches to new tab
+		driver.get(url);
+	}
+	
+	public void switchBackToMainTab() {
+		
+		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+		driver.switchTo().window(tabs.get(0)); // switch back to main screen        
+	
+	}
+	
 }
