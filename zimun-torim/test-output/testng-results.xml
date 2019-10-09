@@ -1,45 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="5" passed="5" failed="0" skipped="0">
+<testng-results total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-10-06T09:57:43Z" name="Suite1" finished-at="2019-10-06T09:59:38Z" duration-ms="114977">
+  <suite started-at="2019-10-09T22:41:45Z" name="Suite1" finished-at="2019-10-09T22:45:20Z" duration-ms="214987">
     <groups>
     </groups>
-    <test started-at="2019-10-06T09:57:43Z" name="Regression1" finished-at="2019-10-06T09:59:38Z" duration-ms="114977">
+    <test started-at="2019-10-09T22:41:45Z" name="Regression1" finished-at="2019-10-09T22:45:20Z" duration-ms="214987">
       <class name="zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest">
-        <test-method signature="ZimunTorimAppointmentApproval()[pri:5, instance:zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest@2f177a4b]" started-at="2019-10-06T12:59:37Z" name="ZimunTorimAppointmentApproval" finished-at="2019-10-06T12:59:38Z" duration-ms="523" status="PASS">
+        <test-method signature="ZimunTorimAppointmentApproval()[pri:5, instance:zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest@298a5e20]" started-at="2019-10-10T01:42:35Z" name="ZimunTorimAppointmentApproval" finished-at="2019-10-10T01:42:36Z" duration-ms="806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ZimunTorimAppointmentApproval -->
       </class> <!-- zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest -->
       <class name="zimun.torim.tests._002_ZimunTorimStationLocatingTest">
-        <test-method signature="_002_ZimunTorimStationLocating()[pri:2, instance:zimun.torim.tests._002_ZimunTorimStationLocatingTest@2928854b]" started-at="2019-10-06T12:57:55Z" name="_002_ZimunTorimStationLocating" finished-at="2019-10-06T12:58:48Z" duration-ms="53053" status="PASS">
+        <test-method signature="_002_ZimunTorimStationLocating()[pri:2, instance:zimun.torim.tests._002_ZimunTorimStationLocatingTest@3e27aa33]" started-at="2019-10-10T01:41:53Z" name="_002_ZimunTorimStationLocating" finished-at="2019-10-10T01:42:31Z" duration-ms="38544" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- _002_ZimunTorimStationLocating -->
       </class> <!-- zimun.torim.tests._002_ZimunTorimStationLocatingTest -->
       <class name="zimun.torim.tests._003_ZimunTorimSelectAppointmentTest">
-        <test-method signature="ZimunTorimSelectAppointment()[pri:3, instance:zimun.torim.tests._003_ZimunTorimSelectAppointmentTest@27ae2fd0]" started-at="2019-10-06T12:58:48Z" name="ZimunTorimSelectAppointment" finished-at="2019-10-06T12:58:49Z" duration-ms="943" status="PASS">
+        <test-method signature="ZimunTorimSelectAppointment()[pri:3, instance:zimun.torim.tests._003_ZimunTorimSelectAppointmentTest@2e385cce]" started-at="2019-10-10T01:42:31Z" name="ZimunTorimSelectAppointment" finished-at="2019-10-10T01:42:32Z" duration-ms="940" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ZimunTorimSelectAppointment -->
       </class> <!-- zimun.torim.tests._003_ZimunTorimSelectAppointmentTest -->
       <class name="zimun.torim.tests._004_ZimunTorimSetAppointmentTest">
-        <test-method signature="ZimunTorimSetAppointment()[pri:4, instance:zimun.torim.tests._004_ZimunTorimSetAppointmentTest@29176cc1]" started-at="2019-10-06T12:58:49Z" name="ZimunTorimSetAppointment" finished-at="2019-10-06T12:59:37Z" duration-ms="48235" status="PASS">
+        <test-method signature="ZimunTorimSetAppointment()[pri:4, instance:zimun.torim.tests._004_ZimunTorimSetAppointmentTest@2ddc9a9f]" started-at="2019-10-10T01:42:32Z" name="ZimunTorimSetAppointment" finished-at="2019-10-10T01:42:35Z" duration-ms="2572" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ZimunTorimSetAppointment -->
       </class> <!-- zimun.torim.tests._004_ZimunTorimSetAppointmentTest -->
       <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest@79efed2d]" started-at="2019-10-06T12:57:39Z" name="beforeMethod" finished-at="2019-10-06T12:57:43Z" duration-ms="4045" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest@750e2b97]" started-at="2019-10-10T01:41:40Z" name="beforeMethod" finished-at="2019-10-10T01:41:45Z" duration-ms="4536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="_001_ZimunTorimVerifyPersonalDetails()[pri:1, instance:zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest@79efed2d]" started-at="2019-10-06T12:57:43Z" name="_001_ZimunTorimVerifyPersonalDetails" finished-at="2019-10-06T12:57:55Z" duration-ms="12113" status="PASS">
+        <test-method signature="_001_ZimunTorimVerifyPersonalDetails()[pri:1, instance:zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest@750e2b97]" started-at="2019-10-10T01:41:45Z" name="_001_ZimunTorimVerifyPersonalDetails" finished-at="2019-10-10T01:41:53Z" duration-ms="8230" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- _001_ZimunTorimVerifyPersonalDetails -->
       </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <test-method signature="_008_ZimunTorimVerifyEmailNotificationsRecieved()[pri:0, instance:zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest@46cdf8bd]" started-at="2019-10-10T01:43:13Z" name="_008_ZimunTorimVerifyEmailNotificationsRecieved" finished-at="2019-10-10T01:45:20Z" duration-ms="127102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _008_ZimunTorimVerifyEmailNotificationsRecieved -->
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+      <class name="zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest">
+        <test-method signature="_007_ZimunTorimUpdateAppointment()[pri:0, instance:zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest@2a7f1f10]" started-at="2019-10-10T01:42:36Z" name="_007_ZimunTorimUpdateAppointment" finished-at="2019-10-10T01:43:12Z" duration-ms="36663" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- _007_ZimunTorimUpdateAppointment -->
+      </class> <!-- zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest -->
     </test> <!-- Regression1 -->
   </suite> <!-- Suite1 -->
 </testng-results>

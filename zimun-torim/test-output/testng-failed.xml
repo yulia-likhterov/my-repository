@@ -13,6 +13,11 @@
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest">
+        <methods>
+          <include name="_007_ZimunTorimUpdateAppointment"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest -->
       <class name="zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest">
         <methods>
           <include name="ZimunTorimAppointmentApproval"/>
