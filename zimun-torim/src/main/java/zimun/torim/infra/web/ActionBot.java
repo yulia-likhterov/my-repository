@@ -18,18 +18,40 @@ public class ActionBot {
 	
 	private WebDriver driver;
 	protected ReportDispatcher report = ReportManager.getInstance();
+	private boolean isClicked = false;
 	
 	public ActionBot(WebDriver driver) {
 		this.driver = driver;
 	}
 	
+	public boolean clickWithReturn (By2 by2) {
+		
+		try {
+			report.log("Click: " + by2);
+			if (!driver.findElement(by2.by).isDisplayed()) {
+				waitForElementToBeVisible(by2, 80);
+			}
+			if (!driver.findElement(by2.by).isSelected()) {
+				waitForElementToBeClickable(by2, 40);
+			}
+			driver.findElement(by2.by).click();
+			isClicked = true;
+			return isClicked;
+		}
+		catch (Exception ex) {
+			report.log("Didn't click on the element: " + by2);
+			isClicked = false;
+			return isClicked;
+		}
+	}
+	
 	public void click(By2 by2) throws InterruptedException {
 		report.log("Click: " + by2);
 		if (!driver.findElement(by2.by).isDisplayed()) {
-			waitForElementToBeVisible(by2, 30);
+			waitForElementToBeVisible(by2, 80);
 		}
-		if (!driver.findElement(by2.by).isSelected()) {
-			waitForElementToBeClickable(by2, 20);
+		else if (!driver.findElement(by2.by).isSelected()) {
+			waitForElementToBeClickable(by2, 40);
 		}
 		driver.findElement(by2.by).click();
 		
@@ -121,9 +143,14 @@ public class ActionBot {
 	
 	public void switchToNewTab(String url) {
 		
-		((JavascriptExecutor)driver).executeScript("window.open()");
 		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
-		driver.switchTo().window(tabs.get(1)); //switches to new tab
+		if (tabs.size()<2) {
+			
+			((JavascriptExecutor)driver).executeScript("window.open()");
+			tabs = new ArrayList<String> (driver.getWindowHandles());
+			
+		}
+		driver.switchTo().window(tabs.get(1)); // switches to new tab
 		driver.get(url);
 	}
 	

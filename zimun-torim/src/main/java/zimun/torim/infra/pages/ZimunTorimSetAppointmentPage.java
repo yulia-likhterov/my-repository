@@ -18,8 +18,13 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 	private static final By2 emailNameInput = new By2("'emailName' input", By.id("inboxfield"));
 	private static final By2 goNewInboxButton = new By2("'goNewInbox' button", By.id("go_inbox1"));
 	private static final By2 setAppointmentSubjectLabel = new By2("'setAppointmentSubject' label", By.xpath("//td/a[text()[contains(.,'אישור קביעת תור')]]"));
+	private static final By2 updatedAppointmentSubjectLabel = new By2("'updatedAppointmentSubject' label", By.xpath("//td/a[text()[contains(.,'עדכון מועד תור')]]"));
+	
 	private static final By2 getEmailAppointmentApprovalLabel = new By2("'getAppointmentApproval' label", By.xpath("//b[text()[contains(.,'להלן אישור התור לטיפות חלב')]]"));
+	private static final By2 getEmailAppointmentUpdateApprovalLabel = new By2("'getEmailAppointmentUpdateApproval' label", By.xpath("//b[text()[contains(.,'עודכן מועד התור לטיפת חלב')]]"));
+	
 	private static final By2 ishurButton = new By2("'ishurButton' button", By.id("gobut"));
+	private static final By2 appointmentSetTimeLabel = new By2("'appointmentSetTime' label", By.xpath("//div[@class='col-md-1']/span[@class='fhc-padding regularfont ng-binding']"));
 	
 	
 	public ZimunTorimSetAppointmentPage (WebDriver driver) {
@@ -65,9 +70,15 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 	}
 	
 	
-	public void clickOnSetAppointmentSubjectLabel() throws Exception {
+	public boolean clickOnSetAppointmentSubjectLabel() throws Exception {
 		
-		bot.click(setAppointmentSubjectLabel);
+		return bot.clickWithReturn(setAppointmentSubjectLabel);
+		
+	}	
+	
+	public boolean clickOnUpdatedAppointmentSubjectLabel() throws Exception {
+		
+		return bot.clickWithReturn(updatedAppointmentSubjectLabel);
 		
 	}	
 	
@@ -98,6 +109,13 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 		
 		return bot.getElementText(getEmailAppointmentApprovalLabel);
 	}
+	
+	
+	public String getEmailAppointmentUpdateLabel () throws Exception {
+		
+		return bot.getElementText(getEmailAppointmentUpdateApprovalLabel);
+	}
+	
 
 	public void switchToMsgBodyIframe() {
 		
@@ -112,6 +130,11 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 	public void switchBackToZimunTorim() {
 		
 		bot.switchBackToMainTab();
+	}
+	
+	public String getAppointmentSetTimeLabel () throws Exception {
+		
+		return bot.getElementText(appointmentSetTimeLabel);
 	}
 	
 }

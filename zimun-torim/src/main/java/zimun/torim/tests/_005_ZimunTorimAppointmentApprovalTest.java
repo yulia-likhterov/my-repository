@@ -23,15 +23,15 @@ public class _005_ZimunTorimAppointmentApprovalTest extends AbstractTest {
 		// Step 1 - Verify the appointment was set successfully
 		report.startLevel("Step 1 - Verify the appointment was set successfully");
 		ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage zimunTorimAppointmentApprovalUpdateCancelSetAnotherPage = new ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage(driver);
-		actualVerifiedAppointmentSetLabel=zimunTorimAppointmentApprovalUpdateCancelSetAnotherPage.getverifyAppointmentSetLabel();
+		actualVerifiedAppointmentSetLabel=zimunTorimAppointmentApprovalUpdateCancelSetAnotherPage.getVerifyAppointmentSetLabel();
 		AssertUtils.assertTrue(actualVerifiedAppointmentSetLabel.contains(expectedVerifiedAppointmentSetLabel), "Expecting to see '" + expectedVerifiedAppointmentSetLabel + "' as part of appointment approval label");
 		takeScreenshot("Screen shot of appointment approval verification page");
 		report.endLevel();
 		
-		
-		// By.id("butChangingDateAppointment") עדכון מועד תור
-		// By.xpath("//tr[1]/td[@class='appintment-time']//li[1]")
-		// By.xpath("//tr[1]//a[text()[contains(.,'הזמנת תור')]]")
+		// get text By.xpath("//div[@class='col-md-1']/span[@class='fhc-padding regularfont ng-binding']")
+		// click By.id("butChangingDateAppointment") עדכון מועד תור
+		// get text By.xpath("//tr[1]/td[@class='appintment-time']//li[1]")
+		// click By.xpath("//tr[1]//a[text()[contains(.,'הזמנת תור')]]")
 	
 	}
 	

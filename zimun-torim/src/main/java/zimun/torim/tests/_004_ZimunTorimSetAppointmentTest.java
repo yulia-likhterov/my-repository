@@ -11,21 +11,18 @@ import org.testng.annotations.Test;
 
 import zimun.torim.infra.pages.ZimunTorimSetAppointmentPage;
 import zimun.torim.infra.utils.AssertUtils;
+import zimun.torim.infra.web.ActionBot;
 
 public class _004_ZimunTorimSetAppointmentTest extends AbstractTest {
 	
 	private String mobilePhoneBaseNumber;
 	private String mobilePhonePrefix;
-	SimpleDateFormat dateFormat1 = new SimpleDateFormat("yyyyMMdd_HHmmss");
-	Date testStartTime = new Date();
-	private String email;
+	private static SimpleDateFormat dateFormat1 = new SimpleDateFormat("ddMMyyyy_HHmmss");
+	private static Date testStartTime = new Date();
+	private static String email="";
 	private String emailAddress;
-	private String emailSiteUrl;
-	private boolean isDismissCookiesVisible;
 	
-	private String actualEmailAppointmentApprovalLabel;
-	private String expectedEmailAppointmentApprovalLabel;
-	
+
 	@Test (priority=4)
 	public void ZimunTorimSetAppointment() throws Exception {
 		
@@ -41,34 +38,18 @@ public class _004_ZimunTorimSetAppointmentTest extends AbstractTest {
 		
 		// Step 2 - Add email address
 		report.startLevel("Step 2 - Add email address");
-		email = "newEmail_" + dateFormat1.format(testStartTime); 
+		email = getEmailName();
 		emailAddress = email + "@mailinator.com";
 		zimunTorimSetAppointmentPage.writeToEmailAddressInput(emailAddress);
 		takeScreenshot("Screen shot of filled contact details for notifications to be send upon appointment set");
 		report.endLevel();
-				
+		
 		// Step 3 - Set the appointment
 		report.startLevel("Step 3 - Set the appointment");
 		zimunTorimSetAppointmentPage.clickOnIshurButton();
 		report.endLevel();
 		
-		// Step 4 - Verify the appointment set notification received by the newly created email from step 3
-		report.startLevel("Step 4 - Verify the appointment set notification received by the newly created email from step 3");
-		zimunTorimSetAppointmentPage.switchToMailinatorTab(emailSiteUrl);
-		zimunTorimSetAppointmentPage.writeToEmailNameInput(email);
-		takeScreenshot("Screen shot of landing page of mailinator.com with filled new inbox address");
-		zimunTorimSetAppointmentPage.clickOnGoNewInboxButton();
-		isDismissCookiesVisible=zimunTorimSetAppointmentPage.isDismissCookiesButtonVisible();
-		if (isDismissCookiesVisible) {
-		zimunTorimSetAppointmentPage.clickOnDismissCookiesButton();
-		}								
-		zimunTorimSetAppointmentPage.clickOnSetAppointmentSubjectLabel();
-		zimunTorimSetAppointmentPage.switchToMsgBodyIframe();
-		actualEmailAppointmentApprovalLabel=zimunTorimSetAppointmentPage.getEmailAppointmentApprovalLabel();
-		takeScreenshot("Screen shot of appointment set notification in email");
-		AssertUtils.assertTrue(actualEmailAppointmentApprovalLabel.contains(expectedEmailAppointmentApprovalLabel), "Expecting to see '" + expectedEmailAppointmentApprovalLabel + "' as part of mail set appoitment notification label");
-		zimunTorimSetAppointmentPage.switchBackToZimunTorim();
-		report.endLevel();
+		
 		
 	}
 	
@@ -80,9 +61,16 @@ public class _004_ZimunTorimSetAppointmentTest extends AbstractTest {
 
 		mobilePhoneBaseNumber = prop.getProperty("mobilePhoneBaseNumber");
 		mobilePhonePrefix = prop.getProperty("mobilePhonePrefix");
-		emailSiteUrl = prop.getProperty("emailSiteUrl");
-		expectedEmailAppointmentApprovalLabel = prop.getProperty("expectedEmailAppointmentApprovalLabel");
 		
+	}
+	
+	public static String getEmailName() {
+		
+		if (email=="")
+		{
+			email = "newEmail_" + dateFormat1.format(testStartTime); 
+		}
+		return email;
 	}
 
 }
