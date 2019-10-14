@@ -1,57 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="7" passed="7" failed="0" skipped="0">
+<testng-results total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-10-09T22:41:45Z" name="Suite1" finished-at="2019-10-09T22:45:20Z" duration-ms="214987">
+  <suite started-at="2019-10-13T08:44:09Z" name="Default suite" finished-at="2019-10-13T08:44:09Z" duration-ms="222">
     <groups>
     </groups>
-    <test started-at="2019-10-09T22:41:45Z" name="Regression1" finished-at="2019-10-09T22:45:20Z" duration-ms="214987">
-      <class name="zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest">
-        <test-method signature="ZimunTorimAppointmentApproval()[pri:5, instance:zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest@298a5e20]" started-at="2019-10-10T01:42:35Z" name="ZimunTorimAppointmentApproval" finished-at="2019-10-10T01:42:36Z" duration-ms="806" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ZimunTorimAppointmentApproval -->
-      </class> <!-- zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest -->
-      <class name="zimun.torim.tests._002_ZimunTorimStationLocatingTest">
-        <test-method signature="_002_ZimunTorimStationLocating()[pri:2, instance:zimun.torim.tests._002_ZimunTorimStationLocatingTest@3e27aa33]" started-at="2019-10-10T01:41:53Z" name="_002_ZimunTorimStationLocating" finished-at="2019-10-10T01:42:31Z" duration-ms="38544" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- _002_ZimunTorimStationLocating -->
-      </class> <!-- zimun.torim.tests._002_ZimunTorimStationLocatingTest -->
-      <class name="zimun.torim.tests._003_ZimunTorimSelectAppointmentTest">
-        <test-method signature="ZimunTorimSelectAppointment()[pri:3, instance:zimun.torim.tests._003_ZimunTorimSelectAppointmentTest@2e385cce]" started-at="2019-10-10T01:42:31Z" name="ZimunTorimSelectAppointment" finished-at="2019-10-10T01:42:32Z" duration-ms="940" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ZimunTorimSelectAppointment -->
-      </class> <!-- zimun.torim.tests._003_ZimunTorimSelectAppointmentTest -->
-      <class name="zimun.torim.tests._004_ZimunTorimSetAppointmentTest">
-        <test-method signature="ZimunTorimSetAppointment()[pri:4, instance:zimun.torim.tests._004_ZimunTorimSetAppointmentTest@2ddc9a9f]" started-at="2019-10-10T01:42:32Z" name="ZimunTorimSetAppointment" finished-at="2019-10-10T01:42:35Z" duration-ms="2572" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ZimunTorimSetAppointment -->
-      </class> <!-- zimun.torim.tests._004_ZimunTorimSetAppointmentTest -->
-      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest@750e2b97]" started-at="2019-10-10T01:41:40Z" name="beforeMethod" finished-at="2019-10-10T01:41:45Z" duration-ms="4536" status="PASS">
+    <test started-at="2019-10-13T08:44:09Z" name="Default test" finished-at="2019-10-13T08:44:09Z" duration-ms="222">
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNextAppointment">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNextAppointment@25641d39]" started-at="2019-10-13T11:44:04Z" name="beforeMethod" finished-at="2019-10-13T11:44:09Z" duration-ms="4941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="_001_ZimunTorimVerifyPersonalDetails()[pri:1, instance:zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest@750e2b97]" started-at="2019-10-10T01:41:45Z" name="_001_ZimunTorimVerifyPersonalDetails" finished-at="2019-10-10T01:41:53Z" duration-ms="8230" status="PASS">
+        <test-method signature="getServiceToSelectAccordingToPatientIdAndYearOfBirth(zimun.torim.infra.web.Patient)[pri:0, instance:zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNextAppointment@25641d39]" started-at="2019-10-13T11:44:09Z" name="getServiceToSelectAccordingToPatientIdAndYearOfBirth" data-provider="csvParamsPatients" finished-at="2019-10-13T11:44:09Z" duration-ms="0" status="SKIP">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:162)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:430)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1270)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:985)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1075)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
+	at zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNextAppointment.dataProviderPatients(_001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNextAppointment.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:136)
+	... 20 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- _001_ZimunTorimVerifyPersonalDetails -->
-      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
-      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
-        <test-method signature="_008_ZimunTorimVerifyEmailNotificationsRecieved()[pri:0, instance:zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest@46cdf8bd]" started-at="2019-10-10T01:43:13Z" name="_008_ZimunTorimVerifyEmailNotificationsRecieved" finished-at="2019-10-10T01:45:20Z" duration-ms="127102" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- _008_ZimunTorimVerifyEmailNotificationsRecieved -->
-      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
-      <class name="zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest">
-        <test-method signature="_007_ZimunTorimUpdateAppointment()[pri:0, instance:zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest@2a7f1f10]" started-at="2019-10-10T01:42:36Z" name="_007_ZimunTorimUpdateAppointment" finished-at="2019-10-10T01:43:12Z" duration-ms="36663" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- _007_ZimunTorimUpdateAppointment -->
-      </class> <!-- zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest -->
-    </test> <!-- Regression1 -->
-  </suite> <!-- Suite1 -->
+        </test-method> <!-- getServiceToSelectAccordingToPatientIdAndYearOfBirth -->
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNextAppointment -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

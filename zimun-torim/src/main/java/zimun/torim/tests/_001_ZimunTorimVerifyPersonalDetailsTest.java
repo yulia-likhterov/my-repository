@@ -1,16 +1,25 @@
 package zimun.torim.tests;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
+import org.testng.ITestContext;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.xml.XmlSuite;
 
 import zimun.torim.infra.config.MainConfig;
 import zimun.torim.infra.pages.ZimunTorimPersonalDetailsPage;
 import zimun.torim.infra.pages.ZimunTorimStationLocatingPage;
 import zimun.torim.infra.utils.AssertUtils;
+import zimun.torim.infra.web.Patient;
 
 public class _001_ZimunTorimVerifyPersonalDetailsTest extends AbstractTest {
 
@@ -23,17 +32,22 @@ public class _001_ZimunTorimVerifyPersonalDetailsTest extends AbstractTest {
 	private String expectedPersonalDetailsMainLabel;
 	private String expectedPersonalDetailsSecondaryLabel;
 	private String stationLocatingPageLabel;
+	private String suiteName;
 	
-	@Test (priority=1)
+	
+	@BeforeTest 
+	public void getCurrentSuite (ITestContext ctx) {
+	  suiteName = ctx.getCurrentXmlTest().getSuite().getName();
+	}
+		 
+	
+	@Test (priority=2)
 	public void _001_ZimunTorimVerifyPersonalDetails() throws Exception {
 		
+		if (suiteName.equalsIgnoreCase("Suite1")) {
+		
 		initParams();
-		//String station = "חרושת" for test
-		
-		//String expectedAvailableSlotsPerStationPageLabel = "קביעת תור- טיפת חלב "+station;
-		
-		//String city = "בת-ים" for test
-		// Step 1 -Verify personal details page
+		}
 		
 		report.startLevel("Step 1 - Verify that you are on personal details page");
 		browseToUrl(MainConfig.baseUrl);

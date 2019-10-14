@@ -1,5 +1,8 @@
 package zimun.torim.infra.pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -17,7 +20,10 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 	private static final By2 selectServiceDropDown = new By2("'selectService' dropdown", By.cssSelector("div[class='ui-select-match']"));
 	private static final By2 selectAServiceFromDropDown = new By2("'selectAServiceFrom' dropdown", By.cssSelector("span[class='ui-select-placeholder text-muted ng-binding']"));
 	private static final By2 selectedServiceFromDropDown = new By2("'selectedServiceFrom' dropdown", By.id("ui-select-choices-row-0-0"));
+	private static final By2 getSelectedServiceLabel = new By2("'getSelectedService' label", By.cssSelector("span[ng-bind='$select.selected.VisitTypeDesc'"));
+	
 	private static final By2 nextPageButton = new By2("'nextPage' button", By.id("gobut"));
+	
 	
 	public ZimunTorimPersonalDetailsPage(WebDriver driver) {
 		super(driver);	
@@ -26,6 +32,13 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 	public ZimunTorimPersonalDetailsPage() {
 		
 	}
+	
+	
+	public String getSelectedServiceLabel() throws Exception {
+		
+		return bot.getElementText(getSelectedServiceLabel);
+	}
+	
 	
 	public String getPersonalDetailsPageMainLabel() throws Exception {
 		
@@ -50,6 +63,32 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 		
 	}
 
+	
+	public void clickToOpenTheServiceSelect() throws Exception {
+		
+		bot.click(selectServiceDropDown);
+		bot.click(selectAServiceFromDropDown);
+	}
+	
+	
+	public List<String> getAvailableServiceOptions() throws Exception {
+		
+		String service;
+		List<String> services = new ArrayList<String>(); 
+		
+		for (int i=0; i<2; i++) {
+			
+			By2 optionalService = new By2("'optionalService' label", By.id("ui-select-choices-row-0-"+i));
+			service = bot.getElementText(optionalService);
+			if (service!="") {
+				services.add(service);
+			}
+		}
+		
+		return services;
+	}
+	
+	
 	public void clickOnSelectedService() throws InterruptedException {
 	
 			bot.click(selectServiceDropDown);

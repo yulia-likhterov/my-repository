@@ -2,7 +2,7 @@ package zimun.torim.infra.web;
 
 import java.util.ArrayList;
 
-import org.openqa.selenium.By;
+//import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -99,15 +99,24 @@ public class ActionBot {
 		
 	}
 	
-	public String getElementText(By2 by2) throws Exception {
+	public String getElementText(By2 by2) throws Exception{
 		
-		if (!driver.findElement(by2.by).isDisplayed()) {
-			waitForElementToBeVisible(by2, 20);
+		String text;
+		try {
+			if (!driver.findElement(by2.by).isDisplayed()) {
+			waitForElementToBeVisible(by2, 60);
+			}
 		}
-		String text = driver.findElement(by2.by).getText();
+		catch (Exception ex) {
+			text="";
+			report.log("Element " + by2 + " inner text: '" + text + "'");
+			return text;
+		}
+		text = driver.findElement(by2.by).getText();
 		report.log("Element " + by2 + " inner text: '" + text + "'");
 		return text;
 	}
+	
 	
 	public boolean isElementVisible (By2 by2) {
 		
