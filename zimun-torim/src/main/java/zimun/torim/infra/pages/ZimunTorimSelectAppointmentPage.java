@@ -9,7 +9,7 @@ public class ZimunTorimSelectAppointmentPage extends AbstractPage {
 	
 	private static final By2 selectedAppointmentInput = new By2("'selectedAppointment' table row", By.xpath("//tr[1]//a[text()[contains(.,'הזמנת תור')]]"));
 	private static final By2 appointmentUpdateTimeLabel = new By2("'appointmentUpdateTime' label", By.xpath("//tr[1]/td[@class='appintment-time']//li[1]"));
-
+	private static final By2 availableAppointmentSlotsLoader = new By2("'availableAppointmentSlots' loader", By.id("circularG"));
 	
 	
 	public ZimunTorimSelectAppointmentPage(WebDriver driver) {
@@ -25,6 +25,7 @@ public class ZimunTorimSelectAppointmentPage extends AbstractPage {
 	
 	public String getAppointmentUpdateTimeLabel () throws Exception {
 		
+		bot.waitForElementNotDisplayed(availableAppointmentSlotsLoader);
 		return bot.getElementText(appointmentUpdateTimeLabel);
 	}
 

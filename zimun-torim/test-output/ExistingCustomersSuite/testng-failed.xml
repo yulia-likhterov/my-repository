@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ExistingCustomersSuite]" guice-stage="DEVELOPMENT">
+  <test name="VerifyPersonalDetails(failed)">
+    <classes>
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <methods>
+          <include name="getCurrentSuite"/>
+          <include name="_001_ZimunTorimVerifyPersonalDetails"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <methods>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+    </classes>
+  </test> <!-- VerifyPersonalDetails(failed) -->
+  <test name="StationLocating(failed)">
+    <classes>
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <methods>
+          <include name="getCurrentSuite"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <methods>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+      <class name="zimun.torim.tests._002_ZimunTorimStationLocatingTest">
+        <methods>
+          <include name="_002_ZimunTorimStationLocating"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._002_ZimunTorimStationLocatingTest -->
+    </classes>
+  </test> <!-- StationLocating(failed) -->
+  <test name="SelectAppointment(failed)">
+    <classes>
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <methods>
+          <include name="getCurrentSuite"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <methods>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+      <class name="zimun.torim.tests._003_ZimunTorimSelectAppointmentTest">
+        <methods>
+          <include name="ZimunTorimSelectAppointment"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._003_ZimunTorimSelectAppointmentTest -->
+    </classes>
+  </test> <!-- SelectAppointment(failed) -->
+  <test name="SetAppointment(failed)">
+    <classes>
+      <class name="zimun.torim.tests._004_ZimunTorimSetAppointmentTest">
+        <methods>
+          <include name="ZimunTorimSetAppointment"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._004_ZimunTorimSetAppointmentTest -->
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <methods>
+          <include name="getCurrentSuite"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <methods>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+    </classes>
+  </test> <!-- SetAppointment(failed) -->
+  <test name="AppointmentApproval(failed)">
+    <classes>
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <methods>
+          <include name="getCurrentSuite"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <methods>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+      <class name="zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest">
+        <methods>
+          <include name="ZimunTorimAppointmentApproval"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest -->
+    </classes>
+  </test> <!-- AppointmentApproval(failed) -->
+  <test name="UpdateAppointment(failed)">
+    <classes>
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <methods>
+          <include name="getCurrentSuite"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <methods>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+      <class name="zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest">
+        <methods>
+          <include name="_007_ZimunTorimUpdateAppointment"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest -->
+    </classes>
+  </test> <!-- UpdateAppointment(failed) -->
+  <test name="SetAdditionalAppointment(failed)">
+    <classes>
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <methods>
+          <include name="getCurrentSuite"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <methods>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+      <class name="zimun.torim.tests._009_ZimunTorimSetAdditionalAppointmentTest">
+        <methods>
+          <include name="_009_ZimunTorimSetAdditionalAppointment"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._009_ZimunTorimSetAdditionalAppointmentTest -->
+    </classes>
+  </test> <!-- SetAdditionalAppointment(failed) -->
+  <test name="VerifyEmailNotificationsRecieved(failed)">
+    <classes>
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+        <methods>
+          <include name="getCurrentSuite"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest">
+        <methods>
+          <include name="_008_ZimunTorimVerifyEmailNotificationsRecieved"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._008_ZimunTorimVerifyEmailNotificationsRecievedTest -->
+    </classes>
+  </test> <!-- VerifyEmailNotificationsRecieved(failed) -->
+</suite> <!-- Failed suite [ExistingCustomersSuite] -->

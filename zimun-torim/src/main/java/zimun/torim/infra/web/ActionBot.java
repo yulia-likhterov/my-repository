@@ -1,18 +1,23 @@
 package zimun.torim.infra.web;
 
+import java.time.Duration;
 import java.util.ArrayList;
+//import java.util.concurrent.TimeUnit;
 
 //import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import zimun.torim.infra.web.By2;
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
+
 
 public class ActionBot {
 	
@@ -45,10 +50,19 @@ public class ActionBot {
 		}
 	}
 	
+	public boolean hasValue(By2 by2) {
+		
+		String text = driver.findElement(by2.by).getAttribute("value");
+		if (text.isEmpty())
+			return false;
+		return true;
+	}
+	
 	public void click(By2 by2) throws InterruptedException {
 		report.log("Click: " + by2);
 		if (!driver.findElement(by2.by).isDisplayed()) {
-			waitForElementToBeVisible(by2, 80);
+			//waitForElementToBeVisible(by2, 80);
+			Thread.sleep(1000);
 		}
 		else if (!driver.findElement(by2.by).isSelected()) {
 			waitForElementToBeClickable(by2, 40);
@@ -99,13 +113,28 @@ public class ActionBot {
 		
 	}
 	
+	public String getElementTextForAvailableSlots(By2 by2) throws Exception{
+		
+		String text;
+		try {
+			waitForElementToBeVisible(by2, 30);	
+		}
+		catch (Exception ex) {
+			text="";
+			report.log("Element " + by2 + " inner text: '" + text + "'");
+			return text;
+		}
+		text = driver.findElement(by2.by).getText();
+		report.log("Element " + by2 + " inner text: '" + text + "'");
+		return text;
+	}
+	
 	public String getElementText(By2 by2) throws Exception{
 		
 		String text;
 		try {
-			if (!driver.findElement(by2.by).isDisplayed()) {
-			waitForElementToBeVisible(by2, 60);
-			}
+			if (!driver.findElement(by2.by).isDisplayed())
+				Thread.sleep(1000);
 		}
 		catch (Exception ex) {
 			text="";
@@ -127,15 +156,27 @@ public class ActionBot {
 	}
 	
 	public void waitForElementNotDisplayed(By2 by2) {
+		try {
 		WebElement element = driver.findElement(by2.by);
-		WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
+		WebDriverWait webDriverWait = new WebDriverWait(driver, 50);
 		webDriverWait.until(ExpectedConditions.invisibilityOf(element));
+		}
+		catch (Exception ex) {
+			System.out.println("Exception from wait for element not visible: "+ex);
+		}
 	}
 	
 	public void waitForElementToBeVisible(By2 by2, int timeoutInSeconds) {
+		
+		/*WebDriverWait webDriverWait = new WebDriverWait(driver, 350);
 		WebElement element = driver.findElement(by2.by);
-		WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
-		webDriverWait.until(ExpectedConditions.visibilityOf(element));
+		webDriverWait.until(ExpectedConditions.visibilityOf(element));*/
+		FluentWait<WebDriver> fluentWait = new FluentWait<>(driver)
+		        .withTimeout(Duration.ofSeconds(40))
+		        .pollingEvery(Duration.ofMillis(10))
+		        .ignoring(NoSuchElementException.class);
+		
+		fluentWait.until(ExpectedConditions.elementToBeSelected(driver.findElement(by2.by)));
 	}
 	
 	

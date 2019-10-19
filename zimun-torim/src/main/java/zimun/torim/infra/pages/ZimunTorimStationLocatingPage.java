@@ -13,6 +13,8 @@ public class ZimunTorimStationLocatingPage extends AbstractPage {
 	private By2 selectedStationLabel;
 	
 	
+	//input[@aria-owns='ui-select-choices-2']
+	
 	public void setSelectedStation (String station) {
 		
 		selectedStationLabel = new By2("'selectedStation' label", By.xpath("//*[text()[contains(.,'"+ station +"')]]"));
@@ -23,6 +25,9 @@ public class ZimunTorimStationLocatingPage extends AbstractPage {
 		
 		super(driver);
 	}
+	
+	
+	
 	
 	
 	public void clickOnCityInput() throws InterruptedException {

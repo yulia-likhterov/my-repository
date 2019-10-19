@@ -3,26 +3,17 @@
 <suite name="Failed suite [Suite1]" guice-stage="DEVELOPMENT">
   <test name="Regression1(failed)">
     <classes>
-      <class name="zimun.torim.tests._004_ZimunTorimSetAppointmentTest">
-        <methods>
-          <include name="ZimunTorimSetAppointment"/>
-        </methods>
-      </class> <!-- zimun.torim.tests._004_ZimunTorimSetAppointmentTest -->
       <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
         <methods>
+          <include name="getCurrentSuite"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
-      <class name="zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest">
+      <class name="zimun.torim.tests._009_ZimunTorimSetAdditionalAppointmentTest">
         <methods>
-          <include name="_007_ZimunTorimUpdateAppointment"/>
+          <include name="_009_ZimunTorimSetAdditionalAppointment"/>
         </methods>
-      </class> <!-- zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest -->
-      <class name="zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest">
-        <methods>
-          <include name="ZimunTorimAppointmentApproval"/>
-        </methods>
-      </class> <!-- zimun.torim.tests._005_ZimunTorimAppointmentApprovalTest -->
+      </class> <!-- zimun.torim.tests._009_ZimunTorimSetAdditionalAppointmentTest -->
     </classes>
   </test> <!-- Regression1(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

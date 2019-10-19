@@ -64,7 +64,7 @@ public class _001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNe
 	// 2. an existing baby patient
 	// 3. a new pregnant woman patient
 	// 4. a new baby patient
-	@Test(dataProvider = "csvParamsPatients")
+	@Test(dataProvider = "csvParamsPatients", priority=1)
 	public void getServiceToSelectAccordingToPatientIdAndYearOfBirth (Patient patient) throws Exception {
 		
 		report.startLevel("Step 1 - Fill services from file to expectedServices list");
@@ -79,11 +79,13 @@ public class _001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNe
 		}
 		report.endLevel();
 		
+		// Step 1 - Fill id and date of birth values from file
 		report.startLevel("Step 1 - Fill id and date of birth values from file");
 		browseToUrl(MainConfig.baseUrl);
 		checkPatientPersonalDetails (patient.id, patient.dobDay, patient.dobMonth, patient.dobYear);
 		report.endLevel();
 		
+		// Step 2 - Get the available values in the requested service select
 		report.startLevel("Step 2 - Get the available values in the requested service select");
 		ZimunTorimPersonalDetailsPage zimunTorimPersonalDetailsPage = new ZimunTorimPersonalDetailsPage(driver);
 		zimunTorimPersonalDetailsPage.clickToOpenTheServiceSelect();
@@ -91,7 +93,8 @@ public class _001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNe
 		actualServices = zimunTorimPersonalDetailsPage.getAvailableServiceOptions();
 		report.endLevel();
 		
-		report.startLevel("Step 3 - Compare between 3 lists, and Verify that the actual available values of the select, are identical to the expected values recieved from the csv file");
+		// Step 3 - Compare between 3 lists, and Verify that the actual available values of the select, are identical to the expected values received from the csv file
+		report.startLevel("Step 3 - Compare between 3 lists, and Verify that the actual available values of the select, are identical to the expected values received from the csv file");
 		boolean isIdentical = false;
 		for (int i = 0; i<actualServices.size(); i++) {
 			if (actualServices.get(i).toString().equals(expectedServices.get(i).toString())) {

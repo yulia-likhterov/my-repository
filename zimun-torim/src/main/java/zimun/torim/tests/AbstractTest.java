@@ -3,12 +3,12 @@ package zimun.torim.tests;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeMethod;
+//import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 
 import zimun.torim.infra.pages.ZimunTorimPersonalDetailsPage;
-import zimun.torim.infra.pages.AbstractPage;
+//import zimun.torim.infra.pages.AbstractPage;
 import zimun.torim.infra.web.BrowserType;
 import zimun.torim.infra.web.WebDriverFactory;
 import zimun.torim.infra.config.MainConfig;
@@ -17,8 +17,8 @@ import il.co.topq.difido.ReportManager;
 import il.co.topq.difido.model.Enums.Status;
 
 import java.io.File;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+//import java.lang.reflect.Constructor;
+//import java.lang.reflect.InvocationTargetException;
 
 @Listeners(il.co.topq.difido.ReportManagerHook.class)
 public abstract class AbstractTest {

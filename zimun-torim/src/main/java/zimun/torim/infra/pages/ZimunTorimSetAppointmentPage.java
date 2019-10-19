@@ -20,8 +20,9 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 	private static final By2 setAppointmentSubjectLabel = new By2("'setAppointmentSubject' label", By.xpath("//td/a[text()[contains(.,'אישור קביעת תור')]]"));
 	private static final By2 updatedAppointmentSubjectLabel = new By2("'updatedAppointmentSubject' label", By.xpath("//td/a[text()[contains(.,'עדכון מועד תור')]]"));
 	
-	private static final By2 getEmailAppointmentApprovalLabel = new By2("'getAppointmentApproval' label", By.xpath("//b[text()[contains(.,'להלן אישור התור לטיפות חלב')]]"));
-	private static final By2 getEmailAppointmentUpdateApprovalLabel = new By2("'getEmailAppointmentUpdateApproval' label", By.xpath("//b[text()[contains(.,'עודכן מועד התור לטיפת חלב')]]"));
+	private static final By2 getEmailAppointmentSetNotificationLabel = new By2("'getAppointmentSetApproval' label", By.xpath("//b[text()[contains(.,'להלן אישור התור')]]"));
+	private static final By2 getEmailAppointmentUpdateNotificationLabel = new By2("'getEmailAppointmentUpdateApproval' label", By.xpath("//b[text()[contains(.,'עודכן מועד התור')]]"));
+	private By2 recievedEmailRowLabel;
 	
 	private static final By2 ishurButton = new By2("'ishurButton' button", By.id("gobut"));
 	private static final By2 appointmentSetTimeLabel = new By2("'appointmentSetTime' label", By.xpath("//div[@class='col-md-1']/span[@class='fhc-padding regularfont ng-binding']"));
@@ -33,14 +34,38 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 	}
 	
 	
+	public boolean checkAllEmailNotificationsRecieved(int i) {
+		
+		recievedEmailRowLabel = new By2("'recievedEmailRow' label", By.xpath("(//td[text()[contains(.,'riut')]])["+ i +"]"));
+		return bot.isElementVisible(recievedEmailRowLabel);
+	}
+	
+	
+	public void clickOnRecievedEmailRow(int i) throws Exception {
+		
+		recievedEmailRowLabel = new By2("'recievedEmailRow' label", By.xpath("(//td[text()[contains(.,'riut')]])["+ i +"]"));
+		bot.click(recievedEmailRowLabel);
+	}
+	
 	public boolean isSelectedAppointmentDetailsFormDisplayed () {
 		
 		return bot.isElementVisible(selectedAppointmentDetailsForm);
 	}
 	
+	
 	public void writeToMobilePhoneBaseNumber (String baseNumber) throws Exception {
 		
 		bot.writeToElement(mobilePhoneBaseNumberInput, baseNumber);
+	}
+	
+	public boolean hasMobilePhoneBaseNumberInputAValue() {
+		
+		return bot.hasValue(mobilePhoneBaseNumberInput);
+	}
+	
+	public boolean hasEmailAddressInputAValue() {
+		
+		return bot.hasValue(emailAddressInput);
 	}
 	
 	public void writeToEmailAddressInput (String email) throws Exception {
@@ -50,7 +75,7 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 	
 	public void setSelectedMobilePrifix (String mobilePrefix) {
 		
-		selectedMobilePrifix = new By2("'selectedStation' label", By.cssSelector("a[href='#" + mobilePrefix + "']"));
+		selectedMobilePrifix = new By2("'selectedPrefix' option", By.cssSelector("a[href='#" + mobilePrefix + "']"));
 		
 	}
 	
@@ -105,15 +130,15 @@ public class ZimunTorimSetAppointmentPage extends AbstractPage {
 		bot.writeToElement (emailNameInput, emailName);
 	}
 	
-	public String getEmailAppointmentApprovalLabel () throws Exception {
+	public String getEmailAppointmentSetApprovalLabel () throws Exception {
 		
-		return bot.getElementText(getEmailAppointmentApprovalLabel);
+		return bot.getElementText(getEmailAppointmentSetNotificationLabel);
 	}
 	
 	
-	public String getEmailAppointmentUpdateLabel () throws Exception {
+	public String getEmailAppointmentUpdateNotificationLabel () throws Exception {
 		
-		return bot.getElementText(getEmailAppointmentUpdateApprovalLabel);
+		return bot.getElementText(getEmailAppointmentUpdateNotificationLabel);
 	}
 	
 

@@ -1,16 +1,16 @@
 package zimun.torim.tests;
 
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.util.Properties;
+//import java.io.FileInputStream;
+//import java.io.InputStreamReader;
+//import java.nio.charset.Charset;
+//import java.util.Properties;
 
 import org.testng.annotations.Test;
 
 import zimun.torim.infra.pages.ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage;
 import zimun.torim.infra.pages.ZimunTorimSelectAppointmentPage;
 import zimun.torim.infra.pages.ZimunTorimSetAppointmentPage;
-import zimun.torim.infra.utils.AssertUtils;
+//import zimun.torim.infra.utils.AssertUtils;
 
 public class _007_ZimunTorimUpdateAppointmentTest extends AbstractTest {
 	
@@ -19,7 +19,7 @@ public class _007_ZimunTorimUpdateAppointmentTest extends AbstractTest {
 	private String updatedAppointmentTime;
 	
 	
-	@Test
+	@Test (priority=7)
 	public void _007_ZimunTorimUpdateAppointment() throws Exception {
 		
 		// Step 1 - Click on update the appointment
@@ -57,8 +57,8 @@ public class _007_ZimunTorimUpdateAppointmentTest extends AbstractTest {
 		
 		// Step 4 - Verify the appointment set successfully 
 		report.startLevel("Step 4 - Verify the appointment set successfully ");
-		_005_ZimunTorimAppointmentApprovalTest zimunTorimAppointmentSetLabel = new _005_ZimunTorimAppointmentApprovalTest();
-		zimunTorimAppointmentSetLabel.ZimunTorimAppointmentApproval();
+		_006_ZimunTorimAppointmentApprovalTest zimunTorimAppointmentSetLabel = new _006_ZimunTorimAppointmentApprovalTest();
+		zimunTorimAppointmentSetLabel._006_ZimunTorimAppointmentApproval();
 		report.endLevel();
 		
 		
