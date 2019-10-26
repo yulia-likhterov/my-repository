@@ -11,13 +11,13 @@ import org.testng.annotations.Test;
 import zimun.torim.infra.pages.ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage;
 import zimun.torim.infra.utils.AssertUtils;
 
-public class _006_ZimunTorimAppointmentApprovalTest extends AbstractTest {
+public class _007_ZimunTorimAppointmentApprovalTest extends AbstractTest {
 	
 	private String expectedVerifiedAppointmentSetLabel;
 	private String actualVerifiedAppointmentSetLabel;
 	
-	@Test (priority=6)
-	public void _006_ZimunTorimAppointmentApproval() throws Exception {
+	@Test (priority=7)
+	public void _007_ZimunTorimAppointmentApproval() throws Exception {
 		
 		initParams();
 		// Step 1 - Verify the appointment was set successfully

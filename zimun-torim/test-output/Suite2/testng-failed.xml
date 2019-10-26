@@ -6,10 +6,14 @@
       <class name="zimun.torim.tests._002_ZimunTorimVerifyPersonalDetailsTest">
         <methods>
           <include name="getCurrentSuite"/>
-          <include name="_002_ZimunTorimVerifyPersonalDetails"/>
           <include name="beforeMethod"/>
         </methods>
       </class> <!-- zimun.torim.tests._002_ZimunTorimVerifyPersonalDetailsTest -->
+      <class name="zimun.torim.tests._003_ZimunTorimStationLocatingTest">
+        <methods>
+          <include name="_003_ZimunTorimStationLocating"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._003_ZimunTorimStationLocatingTest -->
     </classes>
   </test> <!-- Regression2(failed) -->
 </suite> <!-- Failed suite [Suite2] -->

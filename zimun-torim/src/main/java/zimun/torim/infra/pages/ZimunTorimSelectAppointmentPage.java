@@ -1,5 +1,8 @@
 package zimun.torim.infra.pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,7 +16,7 @@ public class ZimunTorimSelectAppointmentPage extends AbstractPage {
 	
 	
 	public ZimunTorimSelectAppointmentPage(WebDriver driver) {
-		// TODO Auto-generated constructor stub
+		
 		super(driver);
 	}
 
@@ -27,6 +30,24 @@ public class ZimunTorimSelectAppointmentPage extends AbstractPage {
 		
 		bot.waitForElementNotDisplayed(availableAppointmentSlotsLoader);
 		return bot.getElementText(appointmentUpdateTimeLabel);
+	}
+	
+	
+	public List<String> getReccomendationForNextAppointmentPerPatient() throws Exception {
+		
+		String reccomendation;
+		List<String> reccomendations = new ArrayList<String>(); 
+		
+		for (int i=1; i<3; i++) {
+			
+			By2 appointmentType = new By2("'appointmentType' label", By.xpath("(//ul[@class[contains(.,'appointment-type-list')]])[1]/li[@class='appointment-type-li ng-binding ng-scope']["+i+"]"));
+			reccomendation = bot.getElementText(appointmentType);
+			if (reccomendation!="") {
+				reccomendations.add(reccomendation);
+			}
+		}
+		
+		return reccomendations;
 	}
 
 }

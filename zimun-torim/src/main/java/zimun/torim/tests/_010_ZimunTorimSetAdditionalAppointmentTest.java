@@ -10,15 +10,15 @@ import org.testng.annotations.Test;
 import zimun.torim.infra.pages.ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage;
 import zimun.torim.infra.pages.ZimunTorimPersonalDetailsPage;
 
-public class _008_ZimunTorimSetAdditionalAppointmentTest extends AbstractTest {
+public class _010_ZimunTorimSetAdditionalAppointmentTest extends AbstractTest {
 	
 	private String id;
 	private String dobDay;
 	private String dobMonth;
 	private String dobYear;
 	
-	@Test (priority=8)
-	public void _008_ZimunTorimSetAdditionalAppointment() throws Exception {
+	@Test (priority=10)
+	public void _010_ZimunTorimSetAdditionalAppointment() throws Exception {
 		
 		initParams();
 		ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage zimunTorimAppointmentApprovalUpdateCancelSetAnotherPage = new ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage(driver);
@@ -28,14 +28,14 @@ public class _008_ZimunTorimSetAdditionalAppointmentTest extends AbstractTest {
 		zimunTorimPersonalDetailsPage.clickOnSelectedService();
 		takeScreenshot("Screen shot of filled personal details");
 		zimunTorimPersonalDetailsPage.clickNextPageButton();
-		_003_ZimunTorimStationLocatingTest zimunTorimStationLocating = new _003_ZimunTorimStationLocatingTest();
-		zimunTorimStationLocating._003_ZimunTorimStationLocating();
-		_004_ZimunTorimSelectAppointmentTest zimunTorimSelectAppointment = new _004_ZimunTorimSelectAppointmentTest();
-		zimunTorimSelectAppointment._004_ZimunTorimSelectAppointment();
-		_005_ZimunTorimSetAppointmentTest zimunTorimSetAppointment = new _005_ZimunTorimSetAppointmentTest();
-		zimunTorimSetAppointment._005_ZimunTorimSetAppointment(); 
-		_006_ZimunTorimAppointmentApprovalTest zimunTorimAppointmentApproval = new _006_ZimunTorimAppointmentApprovalTest();
-		zimunTorimAppointmentApproval._006_ZimunTorimAppointmentApproval(); 
+		_004_ZimunTorimStationLocatingTest zimunTorimStationLocating = new _004_ZimunTorimStationLocatingTest();
+		zimunTorimStationLocating._004_ZimunTorimStationLocating();
+		_005_ZimunTorimSelectAppointmentTest zimunTorimSelectAppointment = new _005_ZimunTorimSelectAppointmentTest();
+		zimunTorimSelectAppointment._005_ZimunTorimSelectAppointment();
+		_006_ZimunTorimSetAppointmentTest zimunTorimSetAppointment = new _006_ZimunTorimSetAppointmentTest();
+		zimunTorimSetAppointment._006_ZimunTorimSetAppointment(); 
+		_007_ZimunTorimAppointmentApprovalTest zimunTorimAppointmentApproval = new _007_ZimunTorimAppointmentApprovalTest();
+		zimunTorimAppointmentApproval._007_ZimunTorimAppointmentApproval(); 
 		
 	}
 	

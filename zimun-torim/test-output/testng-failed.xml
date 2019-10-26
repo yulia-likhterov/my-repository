@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite2]" guice-stage="DEVELOPMENT">
-  <test name="Regression2(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="zimun.torim.tests._002_ZimunTorimVerifyPersonalDetailsTest">
+      <class name="zimun.torim.tests._002_ZimunTorimReccomendationsForNextAppointmentTest">
         <methods>
+          <include name="getAppoitmentTypesAccordingToPatientsReccomendation"/>
           <include name="getCurrentSuite"/>
-          <include name="_002_ZimunTorimVerifyPersonalDetails"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- zimun.torim.tests._002_ZimunTorimVerifyPersonalDetailsTest -->
+      </class> <!-- zimun.torim.tests._002_ZimunTorimReccomendationsForNextAppointmentTest -->
     </classes>
-  </test> <!-- Regression2(failed) -->
-</suite> <!-- Failed suite [Suite2] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

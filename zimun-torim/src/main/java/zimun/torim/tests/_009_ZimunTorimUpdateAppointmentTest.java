@@ -12,15 +12,15 @@ import zimun.torim.infra.pages.ZimunTorimSelectAppointmentPage;
 import zimun.torim.infra.pages.ZimunTorimSetAppointmentPage;
 //import zimun.torim.infra.utils.AssertUtils;
 
-public class _007_ZimunTorimUpdateAppointmentTest extends AbstractTest {
+public class _009_ZimunTorimUpdateAppointmentTest extends AbstractTest {
 	
 	private String setAppointmentTime;
 	private String updateAppointmentTime;
 	private String updatedAppointmentTime;
 	
 	
-	@Test (priority=7)
-	public void _007_ZimunTorimUpdateAppointment() throws Exception {
+	@Test (priority=9)
+	public void _009_ZimunTorimUpdateAppointment() throws Exception {
 		
 		// Step 1 - Click on update the appointment
 		report.startLevel("Step 1 - Update the appointment");
@@ -57,8 +57,8 @@ public class _007_ZimunTorimUpdateAppointmentTest extends AbstractTest {
 		
 		// Step 4 - Verify the appointment set successfully 
 		report.startLevel("Step 4 - Verify the appointment set successfully ");
-		_006_ZimunTorimAppointmentApprovalTest zimunTorimAppointmentSetLabel = new _006_ZimunTorimAppointmentApprovalTest();
-		zimunTorimAppointmentSetLabel._006_ZimunTorimAppointmentApproval();
+		_007_ZimunTorimAppointmentApprovalTest zimunTorimAppointmentSetLabel = new _007_ZimunTorimAppointmentApprovalTest();
+		zimunTorimAppointmentSetLabel._007_ZimunTorimAppointmentApproval();
 		report.endLevel();
 		
 		

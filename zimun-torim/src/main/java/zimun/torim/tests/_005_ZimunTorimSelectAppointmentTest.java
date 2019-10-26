@@ -6,12 +6,12 @@ import org.testng.annotations.Test;
 import zimun.torim.infra.pages.ZimunTorimSelectAppointmentPage;
 import zimun.torim.infra.pages.ZimunTorimSetAppointmentPage;
 
-public class _004_ZimunTorimSelectAppointmentTest extends AbstractTest {
+public class _005_ZimunTorimSelectAppointmentTest extends AbstractTest {
 	
 	
 	
-	@Test (priority=4)
-	public void _004_ZimunTorimSelectAppointment() throws Exception {
+	@Test (priority=5)
+	public void _005_ZimunTorimSelectAppointment() throws Exception {
 		
 		// Step 1 - Select the first appointment slot from table
 		report.startLevel("Step 1 - Select the fourth appointment slot from table");

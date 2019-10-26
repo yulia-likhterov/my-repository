@@ -29,6 +29,16 @@ public class ActionBot {
 		this.driver = driver;
 	}
 	
+	public boolean isEnabled (By2 by2) {
+		
+		String value =  driver.findElement(by2.by).getAttribute("disabled");
+		
+		if (value!=null) {
+			return false;
+		}
+		return true;
+	}
+	
 	public boolean clickWithReturn (By2 by2) {
 		
 		try {

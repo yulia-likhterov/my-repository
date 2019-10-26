@@ -10,10 +10,25 @@ public class ZimunTorimStationLocatingPage extends AbstractPage {
 	private static final By2 stationLocatingPageLabel = new By2("'stationLocatingPage' label", By.xpath("//h3[text()[contains(.,'איתור טיפת חלב')]]"));
 	private static final By2 enterCityInput = new By2("'enterCity' input", By.cssSelector("input[tabindex='1']"));
 	private static final By2 searchCityButton = new By2("'searchCity' button", By.cssSelector("button[ng-click='searchStations($event,0)']"));
+	private static final By2 stationForNewPatientLabel = new By2("'stationForNewPatient' label", By.xpath("//div[text()[contains(.,'חוסניה, חוסנייה')]]"));
+	private static final By2 goToNextButton = new By2("'goToNext' button", By.id("gobut"));
+	
 	private By2 selectedStationLabel;
 	
+	public void clickOnStationForNewPatientLabel () throws Exception {
+		
+		bot.click(stationForNewPatientLabel);
+	}
 	
-	//input[@aria-owns='ui-select-choices-2']
+	public boolean isGoToNextButtonEnabled () {
+		
+		return bot.isEnabled(goToNextButton);
+	}
+	
+	public void clickOnGoToNextButton () throws Exception {
+		
+		bot.click(goToNextButton);
+	}
 	
 	public void setSelectedStation (String station) {
 		

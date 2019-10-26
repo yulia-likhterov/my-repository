@@ -1,0 +1,3 @@
+id,dobDay,dobMonth,dobYear,city,station,expectedAppointmentTypeFirst,expectedAppointmentTypeSecond
+300736386,31,10,1987,חוסנייה,חוסניה,אח/ות,
+310807359,06,04,2018,חוסנייה,חוסניה,אח/ות,רופא/ה

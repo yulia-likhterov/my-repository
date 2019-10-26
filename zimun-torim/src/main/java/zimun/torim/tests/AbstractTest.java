@@ -3,8 +3,10 @@ package zimun.torim.tests;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 //import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 
 import zimun.torim.infra.pages.ZimunTorimPersonalDetailsPage;
@@ -25,6 +27,7 @@ public abstract class AbstractTest {
 	
 	protected static WebDriver driver;
 	protected static ReportDispatcher report = ReportManager.getInstance();
+	protected static String suiteName;
 	
 	@BeforeSuite
 	public static void beforeMethod() throws Exception {
@@ -34,6 +37,13 @@ public abstract class AbstractTest {
 		if (driver == null) {
 			driver = WebDriverFactory.getDriver(BrowserType.CHROME);
 		}
+	}
+	
+	@BeforeSuite 
+	protected void getCurrentSuite (ITestContext ctx) {
+		
+	  suiteName = ctx.getCurrentXmlTest().getSuite().getName();
+	  
 	}
 	
 	public void browseToUrl (String url) {

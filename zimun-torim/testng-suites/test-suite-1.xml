@@ -1,49 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite1" guice-stage="DEVELOPMENT">
-  <test name="VerifyRequestedServiceOptionsAndReccomendationsForNextAppointment">
+  <test name="VerifyRequestedServiceOptions">
     <classes>
-      <class name="zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNextAppointmentTest"/>
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsTest"/>
     </classes>
-  </test> <!-- VerifyRequestedServiceOptionsAndReccomendationsForNextAppointment -->
+  </test> <!-- VerifyRequestedServiceOptions -->
+  <test name="ReccomendationsForNextAppointment">
+    <classes>
+      <class name="zimun.torim.tests_002_ZimunTorimReccomendationsForNextAppointmentTest"/>
+    </classes>
+  </test> <!-- ReccomendationsForNextAppointment -->
   <test name="VerifyPersonalDetails">
     <classes>
-      <class name="zimun.torim.tests._002_ZimunTorimVerifyPersonalDetailsTest"/>
+      <class name="zimun.torim.tests._003_ZimunTorimVerifyPersonalDetailsTest"/>
     </classes>
   </test> <!-- VerifyPersonalDetails -->
   <test name="StationLocating">
     <classes>
-      <class name="zimun.torim.tests._003_ZimunTorimStationLocatingTest"/>
+      <class name="zimun.torim.tests._004_ZimunTorimStationLocatingTest"/>
     </classes>
   </test> <!-- StationLocating -->
   <test name="SelectAppointment">
     <classes>
-      <class name="zimun.torim.tests._004_ZimunTorimSelectAppointmentTest"/>
+      <class name="zimun.torim.tests._005_ZimunTorimSelectAppointmentTest"/>
     </classes>
   </test> <!-- SelectAppointment -->
   <test name="SetAppointment">
     <classes>
-      <class name="zimun.torim.tests._005_ZimunTorimSetAppointmentTest"/>
+      <class name="zimun.torim.tests._006_ZimunTorimSetAppointmentTest"/>
     </classes>
   </test> <!-- SetAppointment -->
   <test name="AppointmentApproval">
     <classes>
-      <class name="zimun.torim.tests._006_ZimunTorimAppointmentApprovalTest"/>
+      <class name="zimun.torim.tests._007_ZimunTorimAppointmentApprovalTest"/>
     </classes>
   </test> <!-- AppointmentApproval -->
   <test name="UpdateAppointment">
     <classes>
-      <class name="zimun.torim.tests._007_ZimunTorimUpdateAppointmentTest"/>
+      <class name="zimun.torim.tests._009_ZimunTorimUpdateAppointmentTest"/>
     </classes>
   </test> <!-- UpdateAppointment -->
   <test name="SetAdditionalAppointment">
     <classes>
-      <class name="zimun.torim.tests._008_ZimunTorimSetAdditionalAppointmentTest"/>
+      <class name="zimun.torim.tests._010_ZimunTorimSetAdditionalAppointmentTest"/>
     </classes>
   </test> <!-- SetAdditionalAppointment -->
   <test name="VerifyEmailNotificationsRecieved">
     <classes>
-      <class name="zimun.torim.tests._009_ZimunTorimVerifyEmailNotificationsRecievedTest"/>
+      <class name="zimun.torim.tests._011_ZimunTorimVerifyEmailNotificationsRecievedTest"/>
     </classes>
   </test> <!-- VerifyEmailNotificationsRecieved -->
 </suite> <!-- ExistingCustomersSuite -->

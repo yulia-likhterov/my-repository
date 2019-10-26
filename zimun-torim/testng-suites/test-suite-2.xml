@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite2" guice-stage="DEVELOPMENT">
-  <test name="Regression2">
+  <test name="PersonalDetailsForNewPatient">
     <classes>
       <class name="zimun.torim.tests._002_ZimunTorimVerifyPersonalDetailsTest"/>
+    </classes>
+  </test>	
+  <test name="StationSelectionForNewPatient">
+  	<classes>
+    	<class name="zimun.torim.tests._003_ZimunTorimStationLocatingTest"/>
     </classes>
   </test> 
 </suite> 

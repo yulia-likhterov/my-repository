@@ -17,7 +17,7 @@ import zimun.torim.infra.utils.AssertUtils;
 //import zimun.torim.infra.utils.AssertUtils;
 import zimun.torim.infra.web.Patient;
 
-public class _001_ZimunTorimVerifyRequestedServiceOptionsAndReccomendationsForNextAppointmentTest extends AbstractTest {
+public class _001_ZimunTorimVerifyRequestedServiceOptionsTest extends AbstractTest {
 	
 	@DataProvider(name = "csvParamsPatients")
 	public Object[][] dataProviderPatients() throws Exception {

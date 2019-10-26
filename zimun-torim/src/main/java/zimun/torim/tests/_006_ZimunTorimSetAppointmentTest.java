@@ -13,7 +13,7 @@ import zimun.torim.infra.pages.ZimunTorimSetAppointmentPage;
 //import zimun.torim.infra.utils.AssertUtils;
 //import zimun.torim.infra.web.ActionBot;
 
-public class _005_ZimunTorimSetAppointmentTest extends AbstractTest {
+public class _006_ZimunTorimSetAppointmentTest extends AbstractTest {
 	
 	private String mobilePhoneBaseNumber;
 	private String mobilePhonePrefix;
@@ -23,8 +23,8 @@ public class _005_ZimunTorimSetAppointmentTest extends AbstractTest {
 	private String emailAddress;
 	
 
-	@Test (priority=5)
-	public void  _005_ZimunTorimSetAppointment() throws Exception {
+	@Test (priority=6)
+	public void  _006_ZimunTorimSetAppointment() throws Exception {
 		
 		initParams();
 		// Step 1 - Add phone number 

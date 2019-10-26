@@ -116,6 +116,12 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 	}
 	
 	
+	public String getSelectedServiceFromDropDownText() throws Exception {
+		
+		return bot.getElementText(selectedServiceFromDropDown);
+	}
+	
+	
 	public List<String> getAvailableServiceOptions() throws Exception {
 		
 		String service;

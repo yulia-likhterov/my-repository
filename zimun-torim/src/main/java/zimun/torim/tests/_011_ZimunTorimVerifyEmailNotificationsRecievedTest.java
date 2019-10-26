@@ -11,7 +11,7 @@ import zimun.torim.infra.pages.ZimunTorimAppointmentApprovalUpdateCancelSetAnoth
 import zimun.torim.infra.pages.ZimunTorimSetAppointmentPage;
 import zimun.torim.infra.utils.AssertUtils;
 
-public class _009_ZimunTorimVerifyEmailNotificationsRecievedTest extends AbstractTest{
+public class _011_ZimunTorimVerifyEmailNotificationsRecievedTest extends AbstractTest{
 	
 	private String emailSiteUrl;
 	private boolean isDismissCookiesVisible;
@@ -20,15 +20,15 @@ public class _009_ZimunTorimVerifyEmailNotificationsRecievedTest extends Abstrac
 	private String actualEmailAppointmentUpdateNotificationApprovalLabel;
 	private String expectedEmailAppointmentUpdateApprovalLabel;
 	
-	@Test (priority=9)
-	public void _009_ZimunTorimVerifyEmailNotificationsRecieved() throws Exception {
+	@Test (priority=11)
+	public void _011_ZimunTorimVerifyEmailNotificationsRecieved() throws Exception {
 	
 		initParams();
 		// Step 1 - Step 1 - Go to the newly created public email from _004_ZimunTorimSetAppointmentTest
 		report.startLevel("Step 1 - Go to the newly created public email from _004_ZimunTorimSetAppointmentTest");
 		ZimunTorimSetAppointmentPage zimunTorimSetAppointmentPage = new ZimunTorimSetAppointmentPage(driver);
 		zimunTorimSetAppointmentPage.switchToMailinatorTab(emailSiteUrl);
-		zimunTorimSetAppointmentPage.writeToEmailNameInput(_005_ZimunTorimSetAppointmentTest.getEmailName());
+		zimunTorimSetAppointmentPage.writeToEmailNameInput(_006_ZimunTorimSetAppointmentTest.getEmailName());
 		takeScreenshot("Screen shot of landing page of mailinator.com with filled new inbox address");
 		zimunTorimSetAppointmentPage.clickOnGoNewInboxButton();
 		isDismissCookiesVisible=zimunTorimSetAppointmentPage.isDismissCookiesButtonVisible();
