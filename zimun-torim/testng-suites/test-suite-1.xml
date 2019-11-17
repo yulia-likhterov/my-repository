@@ -8,7 +8,7 @@
   </test> <!-- VerifyRequestedServiceOptions -->
   <test name="ReccomendationsForNextAppointment">
     <classes>
-      <class name="zimun.torim.tests_002_ZimunTorimReccomendationsForNextAppointmentTest"/>
+      <class name="zimun.torim.tests._002_ZimunTorimReccomendationsForNextAppointmentTest"/>
     </classes>
   </test> <!-- ReccomendationsForNextAppointment -->
   <test name="VerifyPersonalDetails">

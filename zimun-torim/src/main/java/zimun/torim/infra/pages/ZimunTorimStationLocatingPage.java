@@ -2,7 +2,6 @@ package zimun.torim.infra.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import zimun.torim.infra.web.By2;
 
 public class ZimunTorimStationLocatingPage extends AbstractPage {
@@ -12,8 +11,12 @@ public class ZimunTorimStationLocatingPage extends AbstractPage {
 	private static final By2 searchCityButton = new By2("'searchCity' button", By.cssSelector("button[ng-click='searchStations($event,0)']"));
 	private static final By2 stationForNewPatientLabel = new By2("'stationForNewPatient' label", By.xpath("//div[text()[contains(.,'חוסניה, חוסנייה')]]"));
 	private static final By2 goToNextButton = new By2("'goToNext' button", By.id("gobut"));
-	
 	private By2 selectedStationLabel;
+	
+	public ZimunTorimStationLocatingPage (WebDriver driver) {
+		
+		super(driver);
+	}
 	
 	public void clickOnStationForNewPatientLabel () throws Exception {
 		
@@ -32,18 +35,8 @@ public class ZimunTorimStationLocatingPage extends AbstractPage {
 	
 	public void setSelectedStation (String station) {
 		
-		selectedStationLabel = new By2("'selectedStation' label", By.xpath("//*[text()[contains(.,'"+ station +"')]]"));
-		
+		selectedStationLabel = new By2("'selectedStation' label", By.xpath("//*[text()[contains(.,'"+ station +"')]]"));	
 	}
-	
-	public ZimunTorimStationLocatingPage (WebDriver driver) {
-		
-		super(driver);
-	}
-	
-	
-	
-	
 	
 	public void clickOnCityInput() throws InterruptedException {
 		
@@ -67,10 +60,8 @@ public class ZimunTorimStationLocatingPage extends AbstractPage {
 	
 	public String getStationLocatingPageLabel () throws Exception {
 		
-		return bot.getElementText(stationLocatingPageLabel);
-		
-	}
-	
+		return bot.getElementText(stationLocatingPageLabel);	
+	}	
 	
 }
 

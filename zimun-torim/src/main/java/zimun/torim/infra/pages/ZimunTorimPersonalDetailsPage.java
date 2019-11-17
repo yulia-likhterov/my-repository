@@ -12,7 +12,6 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 
 	private static final By2 personalDetailsPageMainLabel = new By2("'personalDetailsPageMain' label", By.xpath("//h1[text()[contains(.,'איתור טיפות חלב וזימון תורים')]]"));
 	private static final By2 personalDetailsPageSecondaryLabel = new By2("'personalDetailsPageSecondary' label", By.xpath("//div[text()[contains(.,'פרטים אישיים')]]"));
-	
 	private static final By2 idInput = new By2("'Id' input", By.id("personalId"));
 	private static final By2 dobDayInput = new By2("'dobDate' input", By.cssSelector("input[type='text'][tabindex='2']"));
 	private static final By2 dobMonthInput = new By2("'dobMonth' input", By.cssSelector("input[type='text'][tabindex='3']"));
@@ -22,17 +21,13 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 	private static final By2 selectedServiceFromDropDown = new By2("'selectedServiceFrom' dropdown", By.id("ui-select-choices-row-0-0"));
 	private static final By2 getSelectedServiceLabel = new By2("'getSelectedService' label", By.cssSelector("span[ng-bind='$select.selected.VisitTypeDesc'"));
 	private static final By2 nextPageButton = new By2("'nextPage' button", By.id("gobut"));
-	
 	private static final By2 firstNameInput = new By2("'firstName' input", By.xpath("//input[@name='FirstName']"));
 	private static final By2 lastNameInput = new By2("'lastName' input", By.xpath("//input[@name='LastName']"));
 	private static final By2 searchCityInputForNewCustomer = new By2("'searchCity' select", By.xpath("//div[@name='SelectedCity']"));
 	private static final By2 focusOnStreetLabelForNewCustomer = new By2("'searchCity' label", By.xpath("//label[text()[contains(.,'רחוב')]]"));
 	private static final By2 enterCityInputForNewCustomer = new By2("'enterCity' input", By.xpath("//input[@aria-owns='ui-select-choices-2']"));
-	
-	
 	private static final By2 searchStreetInputForNewCustomer = new By2("'searchStreet' select", By.xpath("//div[@name='SelectedStreet']/div[@placeholder='בחר']"));
 	private static final By2 enterStreetInputForNewCustomer = new By2("'enterStreet' input", By.xpath("//input[@aria-owns='ui-select-choices-3']"));
-	
 	
 	public ZimunTorimPersonalDetailsPage(WebDriver driver) {
 		super(driver);	
@@ -56,12 +51,6 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 		
 		bot.click(searchCityInputForNewCustomer);
 	}
-	
-	/*public void clickOnEnterCityInputForNewCustomer() throws Exception {
-		
-		bot.click(enterCityInputForNewCustomer);
-
-	}*/
 	
 	public void writeToSearchCityInputForNewCustomer(String city) throws Exception {
 		
@@ -108,7 +97,6 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 		
 	}
 
-	
 	public void clickToOpenTheServiceSelect() throws Exception {
 		
 		bot.click(selectServiceDropDown);
@@ -120,7 +108,6 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 		
 		return bot.getElementText(selectedServiceFromDropDown);
 	}
-	
 	
 	public List<String> getAvailableServiceOptions() throws Exception {
 		
@@ -138,7 +125,6 @@ public class ZimunTorimPersonalDetailsPage extends AbstractPage {
 		
 		return services;
 	}
-	
 	
 	public void clickOnSelectedService() throws InterruptedException {
 	

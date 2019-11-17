@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="zimun.torim.tests._002_ZimunTorimReccomendationsForNextAppointmentTest">
+      <class name="zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsTest">
         <methods>
-          <include name="getAppoitmentTypesAccordingToPatientsReccomendation"/>
+          <include name="getServiceToSelectAccordingToPatientIdAndYearOfBirth" invocation-numbers="3"/>
           <include name="getCurrentSuite"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- zimun.torim.tests._002_ZimunTorimReccomendationsForNextAppointmentTest -->
+      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyRequestedServiceOptionsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

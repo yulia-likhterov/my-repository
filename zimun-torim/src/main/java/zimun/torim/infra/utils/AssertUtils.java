@@ -1,7 +1,6 @@
 package zimun.torim.infra.utils;
 
 import org.testng.Assert;
-
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
 import il.co.topq.difido.model.Enums.Status;

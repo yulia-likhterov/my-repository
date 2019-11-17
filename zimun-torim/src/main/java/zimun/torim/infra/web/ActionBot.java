@@ -2,9 +2,6 @@ package zimun.torim.infra.web;
 
 import java.time.Duration;
 import java.util.ArrayList;
-//import java.util.concurrent.TimeUnit;
-
-//import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -13,11 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import zimun.torim.infra.web.By2;
 import il.co.topq.difido.ReportDispatcher;
 import il.co.topq.difido.ReportManager;
-
 
 public class ActionBot {
 	
@@ -143,8 +138,9 @@ public class ActionBot {
 		
 		String text;
 		try {
-			if (!driver.findElement(by2.by).isDisplayed())
-				Thread.sleep(1000);
+			if (!driver.findElement(by2.by).isDisplayed()) {
+				Thread.sleep(500);
+			} 
 		}
 		catch (Exception ex) {
 			text="";

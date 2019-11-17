@@ -2,7 +2,6 @@ package zimun.torim.infra.pages;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,12 +13,10 @@ public class ZimunTorimSelectAppointmentPage extends AbstractPage {
 	private static final By2 appointmentUpdateTimeLabel = new By2("'appointmentUpdateTime' label", By.xpath("//tr[1]/td[@class='appintment-time']//li[1]"));
 	private static final By2 availableAppointmentSlotsLoader = new By2("'availableAppointmentSlots' loader", By.id("circularG"));
 	
-	
 	public ZimunTorimSelectAppointmentPage(WebDriver driver) {
 		
 		super(driver);
 	}
-
 
 	public void clickOnSelectedAppointment() throws InterruptedException {
 		
@@ -31,7 +28,6 @@ public class ZimunTorimSelectAppointmentPage extends AbstractPage {
 		bot.waitForElementNotDisplayed(availableAppointmentSlotsLoader);
 		return bot.getElementText(appointmentUpdateTimeLabel);
 	}
-	
 	
 	public List<String> getReccomendationForNextAppointmentPerPatient() throws Exception {
 		

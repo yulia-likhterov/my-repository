@@ -16,23 +16,29 @@ public class _007_ZimunTorimAppointmentApprovalTest extends AbstractTest {
 	private String expectedVerifiedAppointmentSetLabel;
 	private String actualVerifiedAppointmentSetLabel;
 	
+	// This test verifies that the appointment from the previous test on the set appointment page
+	// was set successfully by verifying the appointment approval label on the page
 	@Test (priority=7)
 	public void _007_ZimunTorimAppointmentApproval() throws Exception {
 		
-		initParams();
-		// Step 1 - Verify the appointment was set successfully
-		report.startLevel("Step 1 - Verify the appointment was set successfully");
-		ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage zimunTorimAppointmentApprovalUpdateCancelSetAnotherPage = new ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage(driver);
-		actualVerifiedAppointmentSetLabel=zimunTorimAppointmentApprovalUpdateCancelSetAnotherPage.getVerifyAppointmentSetLabel();
-		AssertUtils.assertTrue(actualVerifiedAppointmentSetLabel.contains(expectedVerifiedAppointmentSetLabel), "Expecting to see '" + expectedVerifiedAppointmentSetLabel + "' as part of appointment approval label");
-		takeScreenshot("Screen shot of appointment approval verification page");
-		report.endLevel();
+		try {
 		
-		// get text By.xpath("//div[@class='col-md-1']/span[@class='fhc-padding regularfont ng-binding']")
-		// click By.id("butChangingDateAppointment") עדכון מועד תור
-		// get text By.xpath("//tr[1]/td[@class='appintment-time']//li[1]")
-		// click By.xpath("//tr[1]//a[text()[contains(.,'הזמנת תור')]]")
-	
+			initParams();
+			// Step 1 - Verify the appointment was set successfully
+			report.startLevel("Step 1 - Verify the appointment was set successfully");
+			ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage zimunTorimAppointmentApprovalUpdateCancelSetAnotherPage = new ZimunTorimAppointmentApprovalUpdateCancelSetAnotherPage(driver);
+			actualVerifiedAppointmentSetLabel=zimunTorimAppointmentApprovalUpdateCancelSetAnotherPage.getVerifyAppointmentSetLabel();
+			AssertUtils.assertTrue(actualVerifiedAppointmentSetLabel.contains(expectedVerifiedAppointmentSetLabel), "Expecting to see '" + expectedVerifiedAppointmentSetLabel + "' as part of appointment approval label");
+			takeScreenshot("Screen shot of appointment approval verification page");
+			report.endLevel();
+			
+		}
+		
+		catch (Exception ex) {
+			
+			report.log("There was exception: "+ex);
+			takeScreenshot("Screen shot of exception in "+Thread.currentThread().getStackTrace()[1].getMethodName());
+		}
 	}
 	
 	

@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite2]" guice-stage="DEVELOPMENT">
-  <test name="Regression2(failed)">
+  <test name="PersonalDetailsForNewPatient(failed)">
     <classes>
-      <class name="zimun.torim.tests._002_ZimunTorimVerifyPersonalDetailsTest">
+      <class name="zimun.torim.tests._004_ZimunTorimStationLocatingTest">
         <methods>
           <include name="getCurrentSuite"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- zimun.torim.tests._002_ZimunTorimVerifyPersonalDetailsTest -->
-      <class name="zimun.torim.tests._003_ZimunTorimStationLocatingTest">
+      </class> <!-- zimun.torim.tests._004_ZimunTorimStationLocatingTest -->
+      <class name="zimun.torim.tests._003_ZimunTorimVerifyPersonalDetailsTest">
         <methods>
-          <include name="_003_ZimunTorimStationLocating"/>
+          <include name="_003_ZimunTorimVerifyPersonalDetails"/>
         </methods>
-      </class> <!-- zimun.torim.tests._003_ZimunTorimStationLocatingTest -->
+      </class> <!-- zimun.torim.tests._003_ZimunTorimVerifyPersonalDetailsTest -->
     </classes>
-  </test> <!-- Regression2(failed) -->
+  </test> <!-- PersonalDetailsForNewPatient(failed) -->
+  <test name="StationSelectionForNewPatient(failed)">
+    <classes>
+      <class name="zimun.torim.tests._004_ZimunTorimStationLocatingTest">
+        <methods>
+          <include name="_004_ZimunTorimStationLocating"/>
+          <include name="getCurrentSuite"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._004_ZimunTorimStationLocatingTest -->
+    </classes>
+  </test> <!-- StationSelectionForNewPatient(failed) -->
 </suite> <!-- Failed suite [Suite2] -->

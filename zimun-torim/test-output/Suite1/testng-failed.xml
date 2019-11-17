@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite1]" guice-stage="DEVELOPMENT">
-  <test name="Regression1(failed)">
+  <test name="ReccomendationsForNextAppointment(failed)">
     <classes>
-      <class name="zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest">
+      <class name="zimun.torim.tests._002_ZimunTorimReccomendationsForNextAppointmentTest">
+        <methods>
+          <include name="getAppoitmentTypesAccordingToPatientsReccomendation" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- zimun.torim.tests._002_ZimunTorimReccomendationsForNextAppointmentTest -->
+      <class name="zimun.torim.tests._011_ZimunTorimVerifyEmailNotificationsRecievedTest">
         <methods>
           <include name="getCurrentSuite"/>
           <include name="beforeMethod"/>
         </methods>
-      </class> <!-- zimun.torim.tests._001_ZimunTorimVerifyPersonalDetailsTest -->
-      <class name="zimun.torim.tests._009_ZimunTorimSetAdditionalAppointmentTest">
-        <methods>
-          <include name="_009_ZimunTorimSetAdditionalAppointment"/>
-        </methods>
-      </class> <!-- zimun.torim.tests._009_ZimunTorimSetAdditionalAppointmentTest -->
+      </class> <!-- zimun.torim.tests._011_ZimunTorimVerifyEmailNotificationsRecievedTest -->
     </classes>
-  </test> <!-- Regression1(failed) -->
+  </test> <!-- ReccomendationsForNextAppointment(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

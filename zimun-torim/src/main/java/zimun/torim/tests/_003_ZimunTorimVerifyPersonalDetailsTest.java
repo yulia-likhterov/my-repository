@@ -1,25 +1,14 @@
 package zimun.torim.tests;
 
-//import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
-//import java.nio.charset.StandardCharsets;
-//import java.util.ArrayList;
-//import java.util.List;
 import java.util.Properties;
-
-import org.testng.ITestContext;
-import org.testng.annotations.BeforeTest;
-//import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-//import org.testng.xml.XmlSuite;
-
 import zimun.torim.infra.config.MainConfig;
 import zimun.torim.infra.pages.ZimunTorimPersonalDetailsPage;
 import zimun.torim.infra.pages.ZimunTorimStationLocatingPage;
 import zimun.torim.infra.utils.AssertUtils;
-//import zimun.torim.infra.web.Patient;
 
 public class _003_ZimunTorimVerifyPersonalDetailsTest extends AbstractTest {
 
@@ -30,64 +19,67 @@ public class _003_ZimunTorimVerifyPersonalDetailsTest extends AbstractTest {
 	private String expectedPersonalDetailsMainLabel;
 	private String expectedPersonalDetailsSecondaryLabel;
 	private String stationLocatingPageLabel;
-	//private String suiteName;
 	private String firstName;
 	private String lastName;
 	private String city;
 	private String street;
 	private String expectedFirstService;
 	
-	/*@BeforeTest 
-	public void getCurrentSuite (ITestContext ctx) {
-		
-	  suiteName = ctx.getCurrentXmlTest().getSuite().getName();
-	  
-	}*/
-		 
 	
+	// The next test divides into 2 tests: a flow for an existing patient and a flow for a new patient
+	// According to the patient type, which is separated by Suite1 - existing patient, and Suite2 - new patient, 
+	// There are different values in the optional services select, and the appearance of new patient details form
 	@Test (priority=3)
 	public void _003_ZimunTorimVerifyPersonalDetails() throws Exception {
 		
-		browseToUrl(MainConfig.baseUrl);
+		try {
 		
-		if (suiteName.equalsIgnoreCase("Suite1")) {
-		
-			initParams();
+			browseToUrl(MainConfig.baseUrl);
+			if (suiteName.equalsIgnoreCase("Suite1")) {
 			
-			report.startLevel("Step 1 - Verify that you are on personal details page");
-			//browseToUrl(MainConfig.baseUrl);
-			ZimunTorimPersonalDetailsPage zimunTorimPersonalDetailsPage = new ZimunTorimPersonalDetailsPage(driver);
-			String mainPersonalDetailsPageLabel=zimunTorimPersonalDetailsPage.getPersonalDetailsPageMainLabel();
-			AssertUtils.assertEquals(mainPersonalDetailsPageLabel, expectedPersonalDetailsMainLabel, "Personal details page main label should be: " + mainPersonalDetailsPageLabel);
-			String secondaryPersonalDetailsPageLabel = zimunTorimPersonalDetailsPage.getPersonalDetailsPageSecondaryLabel();
-		    AssertUtils.assertEquals(secondaryPersonalDetailsPageLabel, expectedPersonalDetailsSecondaryLabel, "Personal details page secondary label should be: " + secondaryPersonalDetailsPageLabel);
-			report.endLevel();
+				initParams();
+				// Step 1 - Verify that you are on personal details page according to page labels
+				report.startLevel("Step 1 - Verify that you are on personal details page according to page labels");
+				ZimunTorimPersonalDetailsPage zimunTorimPersonalDetailsPage = new ZimunTorimPersonalDetailsPage(driver);
+				String mainPersonalDetailsPageLabel=zimunTorimPersonalDetailsPage.getPersonalDetailsPageMainLabel();
+				AssertUtils.assertEquals(mainPersonalDetailsPageLabel, expectedPersonalDetailsMainLabel, "Personal details page main label should be: " + mainPersonalDetailsPageLabel);
+				String secondaryPersonalDetailsPageLabel = zimunTorimPersonalDetailsPage.getPersonalDetailsPageSecondaryLabel();
+			    AssertUtils.assertEquals(secondaryPersonalDetailsPageLabel, expectedPersonalDetailsSecondaryLabel, "Personal details page secondary label should be: " + secondaryPersonalDetailsPageLabel);
+				report.endLevel();
+				
+				// Step 2 -  Enter patient personal details and select service
+				report.startLevel("Step 2 - Enter patient personal details and select service");
+				checkPatientPersonalDetails (id, dobDay, dobMonth, dobYear);
+				zimunTorimPersonalDetailsPage.clickOnSelectedService();
+				zimunTorimPersonalDetailsPage.clickNextPageButton();
+				report.endLevel();
+				
+				// Step 3 - Verify the patient details are correct by getting to station location page 
+				report.startLevel("Step 3 - Verify pateint details are correct by getting the station locating page");
+				verifyStationLocatingPageLabel();
+				takeScreenshot("Screen shot of station locating page");
+				report.endLevel();
+			}
 			
-			// Step 2 -  Enter patient personal details and select service
-			report.startLevel("Step 2 - Enter patient personal details and select service");
-			checkPatientPersonalDetails (id, dobDay, dobMonth, dobYear);
-			zimunTorimPersonalDetailsPage.clickOnSelectedService();
-			takeScreenshot("Screen shot of filled personal details");
-			zimunTorimPersonalDetailsPage.clickNextPageButton();
-			report.endLevel();
-			
-			
-			// Step 3 - Verify the patient details are correct by getting to station location page 
-			report.startLevel("Step 3 - Verify pateint details are correct by getting the station location page");
-			verifyStationLocatingPageLabel();
-			report.endLevel();
+			else if (suiteName.equalsIgnoreCase("Suite2")) {
+				
+				initParamsForNewPatient();
+				fillNewPatientDetails();
+				// Step 3 - Verify getting to the station locating page by verifying the page label
+				report.startLevel("Step 3 - Verify getting to the station locating page by verifying the page label");
+				verifyStationLocatingPageLabel();
+				report.endLevel();
+				
+			}
 		}
 		
-		else if (suiteName.equalsIgnoreCase("Suite2")) {
+		catch (Exception ex) {
 			
-			initParamsForNewPatient();
-			fillNewPatientDetails();
-			// Step 3 - Verify getting to the station locating page by verifying the page label
-			report.startLevel("Step 3 - Verify getting to the station locating page by verifying the page label");
-			verifyStationLocatingPageLabel();
-			report.endLevel();
-			
+			report.log("There was exception: "+ex);
+			takeScreenshot("Screen shot of exception in "+Thread.currentThread().getStackTrace()[1].getMethodName());
 		}
+			
+		
 				
 	}
 	
@@ -144,7 +136,7 @@ public class _003_ZimunTorimVerifyPersonalDetailsTest extends AbstractTest {
 		report.startLevel("Step 1 - Fill new baby patient details and verify the customer doesn't exist by getting the first value of ביקור ראשון לתינוק נוסף במשפחה as the first value of השירות המבוקש");
 		checkPatientPersonalDetails (id, dobDay, dobMonth, dobYear);
 		zimunTorimPersonalDetailsPage.clickToOpenTheServiceSelect();
-		// Verify that first service in the select is a service for new baby patient: ביקור ראשון לתינוק נוסף במשפחה
+		// Verify that the first service in the select is a service for new baby patient: ביקור ראשון לתינוק נוסף במשפחה
 		String actualFirstService = zimunTorimPersonalDetailsPage.getSelectedServiceFromDropDownText();
 		AssertUtils.assertEquals(actualFirstService, expectedFirstService, "Fisrt service for new baby patient should be: " + expectedFirstService);
 		zimunTorimPersonalDetailsPage.clickOnSelectedService();
